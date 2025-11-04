@@ -1,0 +1,22 @@
+# Geometric Series
+
+- A geometric sequence is an ordered list of non-zero numbers where you get from one term to the next by multiplying by a common ratio $r$.
+    - $a, ar, ar^2, ar^3, \dots$
+- A finite geometric series is the sum of the first $n$ terms of a geometric sequence.
+    - Definition: $S_n = a + ar + ar^2 + \dots + ar^{n-1}$
+    - Rule: As long as $r$  is unequal to one we may use the following formula:
+        - $S_n = a \frac{1 - r^n}{1 -r}$
+    - Derivation:
+        - $S_n = a + ar + ar^2 + \dots + ar^{n-1}$
+        - $rS_n = ar + ar^2 + ar^3 + \dots + ar^n$
+        - $S_n - rSn  =  a - ar^n$
+        - $S_n(1-r) = a(1-r^n)$
+        - $S_n = a \frac{1 - r^n}{1 -r}$  for $r \neq 1$
+- An infinite geometric series is the sum of all terms of a geometric sequence.
+    - Definition: $S_n = a + ar + ar^2 + ar^3 + \cdots$
+    - Rule: The series only has a finite sum if the common ratio is close to zero.
+        - If $|r| < 1$ the series converges. $S_\infty = \frac{a}{1 - r}$
+        - If $|r| \geq 1$ the series diverges. The sum goes to infinity, or oscillates indefinitely.
+    - Derivation:
+        - Suppose $|r| < 1$, then $\lim_{n\to \infty} S_n = \lim_{n \to \infty} a \frac{1 - r^n}{1 -r} = \frac{a}{1 - r}$
+        - Trivially, for $|r| ≥ 1$ the series diverges.

@@ -1,0 +1,12 @@
+# Calculus
+
+- Definition of the Limit: Let $f(x)$ be defined for all $x \neq a$ over an open interval containing $a$. Let $L$ be a real number. Then $\lim_{x \to a} f(x) = L$ if, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+- Definition of Continuity
+- Definition of the Derivative: A function $f$ is differentiable at a point $x$ in its domain if the following limit exists. This limit is called the derivative of $f$  at $x$, commonly denoted as $f'(x)$. $f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$
+- Product Rule
+- Quotient Rule
+- Chain Rule
+- L'Hôpital's Rule
+- Definition of Integrals
+- Integration by parts
+- Fundamental Theorem of Calculus
