@@ -8,3 +8,4 @@
 - Definition of Integrals
 - Integration by parts
 - Fundamental Theorem of Calculus
+- 
