@@ -4,7 +4,7 @@ This is our shared Obsidian vault. We use Git to keep everything in sync.
 
 ## How This Works (Important!)
 
-This is **not** a live-syncing service like Google Docs. [cite_start]It's an "asynchronous" collaboration[cite: 735].
+This is **not** a live-syncing service like Google Docs. It's an "asynchronous" collaboration[cite: 735].
 
 The workflow is simple:
 1.  **Pull:** Before you start working, "pull" any changes I might have made.
