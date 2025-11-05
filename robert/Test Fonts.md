@@ -1,4 +1,3 @@
-
 asdasdasda
 # Heading 1
 Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
@@ -6,7 +5,11 @@ Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdie
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 ## Heading 3
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum $f(x)$ sociis $x$ natoque $(S, F)$ penatibus et magnis $\frac{1}{x}$ dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-$$ f(x) = \frac{1}{x} S \quad \text{for}~x\in F $$
+$$
+f(x) = \frac{1}{x} S \quad \text{for}~x\in F
+$$
+Here is the formula in-line $f(x) = \frac{1}{x} S \quad \text{for}~x\in F$
+
 Some bullet points
 - Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
 - Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.
