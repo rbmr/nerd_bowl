@@ -10,7 +10,7 @@ Q1 (1 Sep. - 9 Nov.)
 - DSAIT4005 **Machine and Deep Learning**
     - 100% Digital exam
 
-[Machine and Deep Learning](Machine%20and%20Deep%20Learning.md)
+[DSAIT4005 MDL](DSAIT4005%20MDL.md)
 
 - DSAIT4010 **Probabilistic AI and Reasoning**
     - 100% Written exam
