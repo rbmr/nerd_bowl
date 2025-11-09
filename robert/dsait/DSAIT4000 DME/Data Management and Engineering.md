@@ -32,7 +32,7 @@ Lecture 2: Data models
 		- Minimum (Participation Constraint): 0 (optional), 1 (mandatory or total)
 	- Attributes: describe the elementary properties of entities or relationships. May also have some cardinality. May be composites (combination of attributes), or derived (from other attributes, ex. age from Birth Date).
 	- Weak Entities: Sometimes the attributes of an entity are not sufficient to identify its occurrences unambiguously. Other entities are involved in identification. The relationship relating an entity to its owner is the identifying relationship.
-	![[Pasted image 20251106140544.png]]
+	![[Pasted image 20251106140544.png|400]]
 - EER (Enhanced-ER) is an extension of ER that allows for more complex requirements:
 	- Specialization (top-down): You define specific subgroups (subclasses) for a general entity.
 	- Generalization (bottom-up): You find several entities with common features and create a new more general entity (a superclass). 
@@ -109,15 +109,47 @@ Lecture 5: Data Quality
 	- Consistency: Extent to which data is presented in a format compatible with previous data.
 	- Duplication: Measure of unwanted duplication existing within or across a system.
 - Data Quality Metrics.
-- Functional dependencies (FDs): Let X and Y define some sets of attributes, if Y is functionally dependent on X, and two tuples agree on their X values, then they also have to agree on their Y values. May be defined on only a subset of the data (Conditional FDs).
-	- Can be discovered.
+- Functional dependencies (FDs): Let X and Y define some sets of attributes, if Y is functionally dependent on X, and two tuples agree on their X values, then they also have to agree on their Y values. May be defined on only a subset of the data (Conditional FDs). Can be discovered.
 - Integrity constraints: declarative language to express data quality rules. May include an ad-hoc repair algorithm to repair violations. 
-- 
+- Cross Industry Standard Process for Data Mining (CRISP-DM)
+	- Business Understanding: Fully understand the business problem, formulate a solution.
+	- Data Understanding: Fully understand the data available.
+	- Data Preparation: Convert the data sources in a usable format.
+	- Modeling: Apply ML to build a range of models, select the best model for deployment.
+	- Evaluation: Determine if the model will be able to make accurate predictions.
+	- Deployment: Integrate the model in a process in the organization
+	![[Pasted image 20251106194043.png|400]]
+- Most common data quality issues: 
+	- Missing Values: remove feature with missing values, remove rows with missing values, impute missing values. 
+	- Outliers: informed clamp
+
+Lecture 6: Data Integration
+- Data Integration (DI) studies the problem of combining multiple heterogeneous data sources and providing unified data access for the users.
+- Schema matching: discovering the correspondences among the given source schemas.
+- Schema merging: process of combining several related source schemas and building the global schema.
+- Schema mapping: converting source schema to global schema
+	- GAV (global-as-view, global-schema-centric): The global schema is defined in terms of the sources.
+	- LAV (local-as-view, source-centric): The sources are defined in terms of the global schema.
+	- GLAV (combination of GAV and LAV)
+	- We can define this using first order logic.
+- Data matching: identifying records from one or more datasets that refer to the same entity.
+- Query Equivalence: Two queries are equivalent if they produce the same result for all legal databases.
+- Query Containment: A query $q$ is contained in another $q'$ if the result of $q$ is a subset of the result of $q'$ for all legal databases.
+- Undecidable for many query languages.
+
+Lecture 7: Storing/Retrieving Structured Data
+- How to find data fast.
+- Register -> Cache -> Main Memory -> Hard Disk -> Tertiary Storage
+- HDD: Disk Strcture -> aint no way
+- Hard Disk Buffers -> Blocks from disk are loaded in memory, this is the main bottleneck.
+- Dominance of IO-costs: The cost of transferring a block from disk (or cloud storage) to main memory is orders of magnitude larger than the cost of operations in main memory.
+- Ways to reduce IO: Index Structures
+	- Hash indexes
+	- B+ trees
+- B-trees adapt concepts and techniques learned for binary trees and optimize them for hard disk storage. 
 - 
 
-Lecture 7: Introduction to Data Mining with Text and Graphs
-Lecture 8: Storing/Retrieving Structured Data
-Lecture 9: Distributing Structured Data
+Lecture 9: Storing/Retrieving Structured Data
 Lecture 10: Basics of Data Visualization
 Lecture 11: Interactive Visual Data Analysis
 Lecture 12: Storying/Querying Unstructured Data
