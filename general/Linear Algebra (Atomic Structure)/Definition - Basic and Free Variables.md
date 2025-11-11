@@ -6,7 +6,6 @@ In a linear system, variables are classified based on the [[Definition - Echelon
 
 * **Basic Variable:** A variable whose corresponding column contains a pivot position.
 * **Free Variable:** A variable whose corresponding column does not contain a pivot position.
-
 ### Properties
 * A [[Definition - Consistent and Inconsistent System|consistent system]] is solved by expressing the basic variables in terms of the free variables.
 * If a consistent system has no free variables, it has a unique solution.
