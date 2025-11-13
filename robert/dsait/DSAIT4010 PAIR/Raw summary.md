@@ -35,7 +35,7 @@ Search
         - Big downside: it keeps the entire explored region in memory.
     - Iterative Deepening A* (IDA*) : Repeatedly runs A* with an increasing cost limit $U$.
         
-        ![image.png](image%2010.png)
+        ![image.png](robert/dsait/content/image%2010.png)
         
 - Heuristic Properties:
     - Admissible: never over-estimating true cost

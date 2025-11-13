@@ -42,9 +42,9 @@ Curse of dimensionality
 
 - Curse of dimensionality. Adding more features is not always better, since as the number of dimensions increases the amount of data needed to get a reliable estimate grows exponentially.
     
-    ![image.png](image.png)
+    ![image.png](robert/dsait/content/image.png)
     
-    ![image.png](image%201.png)
+    ![image.png](robert/dsait/content/image%201.png)
     
 
 Some definitions
@@ -160,13 +160,13 @@ Classifier Evaluation
 - k-fold cross validation divides the data into k equally sized folds, trains the model on k-1 folds, and evaluates the model on the remaining fold. Leave-one-out (LOO) is a special case of k-fold cross validation where we test a single object at a time.
 - Learning curves plot the estimated classification error (for both training and test set) against the number of samples in the training set.
     
-    ![image.png](image%202.png)
+    ![image.png](robert/dsait/content/image%202.png)
     
-    ![image.png](image%203.png)
+    ![image.png](robert/dsait/content/image%203.png)
     
 - Confusion matrices provides the counts of class-dependent errors, giving a more detailed view than overall error rate. Can be used to estimate the overall cost (weighted error) for a particular classifier.
     
-    ![image.png](image%204.png)
+    ![image.png](robert/dsait/content/image%204.png)
     
 
 Rejection:
@@ -235,7 +235,7 @@ Regularization
 - Parameter tying (parameter sharing): forces different parts of the model to use the same weights, reducing the total number of weights, regularizing the model.
 - Dropout (controversial): at each training step a random fraction of the network’s nodes are temporarily made inactive (output set to 0), this forces the network to learn more robust features. Can be seen as a combination of weight decay and noise injection. At evaluation time: (1) no nodes are dropped, instead weights are rescaled to account for the training process, or (2) simulate multiple networks with dropped out nodes and average their outcomes.
 
-![image.png](image%205.png)
+![image.png](robert/dsait/content/image%205.png)
 
 Convolutional Neural Networks
 
@@ -246,7 +246,7 @@ Convolutional Neural Networks
 - Padding may be used to reduce shrinking.
 - Residual/Skip Connections: attempt to solve vanishing gradients (one unstable gradient causing all reliant gradients to dissapear) by changing the connections between the layers.
     
-    ![image.png](image%206.png)
+    ![image.png](robert/dsait/content/image%206.png)
     
 
 RNNs
@@ -260,7 +260,7 @@ RNNs
     - $O_t = H_t W_{hq} + b_q$
     - Problem: gradient is a string of products over the recurrence length. This causes exploding or vanishing gradients.
         
-        ![image.png](image%207.png)
+        ![image.png](robert/dsait/content/image%207.png)
         
 - Long Short Term Memory (LSTM) adds a cell state that runs parallel to the main hidden state. And adds three gates: Forget gate (decides what information to throw away from the old cell state), input gate (decides what new information to store in the cell state), output gate (decides what part of the cell to reveal as the current hidden state (to use for predictions).
     - $I_t = \sigma(X_t W_{xi} + H_{t-1} W_{hi} + b_i)$
@@ -270,7 +270,7 @@ RNNs
     - $O_t = \sigma(X_t W_{xo} + H_{t-1} W_{ho} + b_o)$
     - $H_t = O_t \odot \tanh(C_t)$
         
-        ![image.png](image%208.png)
+        ![image.png](robert/dsait/content/image%208.png)
         
 - Gated Recurrent Unit (GRU) is a simpler more modern alternative to LSTM. It combines the cell state and hidden state, and only uses two gates: update gate $Z_t$, and reset gate $R_t$.
     - $R_t = \sigma(X_t W_{xr} + H_{t-1} W_{hr} + b_r)$
@@ -278,7 +278,7 @@ RNNs
     - $\tilde{H}_t = \tanh(X_t W_{xh} + (R_t \odot H_{t-1})W_{hh} + b_h)$
     - $H_t = Z_t \odot H_{t-1} + (1 - Z_t) \odot \tilde{H}_t$
         
-        ![image.png](image%209.png)
+        ![image.png](robert/dsait/content/image%209.png)
         
 
 Self Attention
