@@ -5,14 +5,14 @@ Sets
 - The **empty** Set $\emptyset$ is the set that contains no elements.
 - The **universal** set $U$ is the set containing all elements within a specific context.
 
-Sets operations 
+Set operations 
 - The **cardinality** of a set $S$ is the number of elements in the set. Denoted $|S|$.
 - The **power set $\mathcal{P}(A)$** of a set $A$ is the set of all possible subsets of $A$.
 - **Cartesian product ($A \times B$)** is the set of all possible ordered pairs where the first element is from $A$ and the second is from $B$.
 - **Union ($A \cup B$):** The set of all elements that are in set $A$, or in set $B$, or in both.
 - **Intersection ($A \cap B$):** The set of all elements that are in **both** set $A$ and set $B$.
-- **Difference ($A \setminus B$ or $A - B$):** The set of all elements that are in set $A$ but **not** in set $B$.
 - **Complement ($A^c$ or $A'$):** The set of all elements in the universal set ($U$) that are **not** in set $A$. This is the same as $U \setminus A$.
+- **Difference ($A \setminus B$ or $A - B$):** The set of all elements that are in set $A$ but **not** in set $B$. This is the same as $A \cap B^c$.
 
 	![[Pasted image 20251113171353.png|400]]
 
