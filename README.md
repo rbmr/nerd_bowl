@@ -12,7 +12,6 @@ We use a flat, ID-based structure to prevent nesting hell.
 
 * **`00_Inbox`**
     * Drop zone for messy, unsorted notes. Clean these up and move them weekly.
-    * Contains: `$$ Mathematics MOC`, `$$ Finance MOC`.
 * **`10_Concepts`** 🧠 *(The Shared Brain)*
     * **Atomic notes only.** Definitions, theorems, algorithms.
     * *Rule:* No course-specific fluff. Just the concept.
@@ -33,7 +32,13 @@ We use a flat, ID-based structure to prevent nesting hell.
     * Templates, Dataview scripts, and vault configuration.
 
 ---
+## Concept Splitting
+- Concepts can start broad, e.g. Probability Theory, or Loss Functions
+- Using Headings sub-topics can be specified and linked to from other documents (e.g. Loss Functions#MSE)
+- Obsidian allows for these headings to be extracted into new documents, and links to be refactored accordingly.
+- Concepts can be split up based on this video: [Splitting](https://www.youtube.com/embed/C0KvL8T2vEY?si=jFrwe2T126cppS5A)
 
+---
 ## 🤝 The Golden Rules of Collaboration
 
 1.  **Don't Duplicate Concepts:** Before writing a note on "Eigenvectors," check `10_Concepts` (Cmd+O). If it exists, improve it; don't recreate it.
