@@ -9,7 +9,7 @@
         - $S_n - rSn  =  a - ar^n$
         - $S_n(1-r) = a(1-r^n)$
         - $S_n = a \frac{1 - r^n}{1 -r}$  for $r \neq 1$
-- An infinite geom  etric series is the sum of all terms of a geometric sequence.
+- An infinite geometric series is the sum of all terms of a geometric sequence.
     - Definition: $S_\infty = a + ar + ar^2 + ar^3 + \cdots$
     - Rule: The series only has a finite sum if the common ratio is close to zero.
         - If $|r| < 1$ the series converges. $S_\infty = \frac{a}{1 - r}$
