@@ -1,0 +1,3 @@
+- Stochastic process is a series of dependent random variables. 
+- Markov process: stochastic process where the future is independent of the past given the present (Markov Property).
+- 
