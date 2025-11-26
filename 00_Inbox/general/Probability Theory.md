@@ -105,3 +105,5 @@ Conditional expectation
 - **Law of Total Expectation** states that the expected value of $X$ is equal to the expected value of the conditional expectation of $X$ given $Y$: $E(X) = E(E(X \mid Y))$.
 	- Discrete: $E(X) = \sum_{y} E(X \mid Y=y) \cdot P(Y=y)$
 	- Continuous: $E(X) = \int_{-\infty}^{\infty} E(X \mid Y=y) \cdot f_Y(y) \, dy$
+- The **conditional variance** of $X$ given $Y$, denoted as $\text{Var}(X \mid Y)$, measures the variance of $X$ once the value of $Y$ is known.$$\text{Var}(X \mid Y) = E((X - E(X \mid Y))^2 \mid Y)=E(X^2 \mid Y) - (E(X \mid Y))^2$$
+- **Law of Total Variance** relates the marginal variance of $X$ to the conditional variance and conditional expectation given $Y$: $$\text{Var}(X) = E(\text{Var}(X \mid Y)) + \text{Var}(E(X \mid Y))$$
