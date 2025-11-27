@@ -285,3 +285,71 @@ $$\frac{||x_{k+1} - x^*||}{||x_k - x^*||^2} \le M$$
 - **Associated Method:** Newton's Method generally converges quadratically (provided $x_0$ is close enough to the solution).
 
 # Week 4: Derivative-Free Optimization
+![[Subderivatives#Subgradients]]
+
+![[Fermat's Theorem (Optimization)#Convex Fermat Theorem]]
+
+## Numerical Line Search
+If the problem cannot be solved analytically using subgradients, we return to iterative line search methods
+### Search Direction: Coordinate Descent
+Instead of calculating a specific descent direction $p_{k}$, using a gradient, this method cycles through the dimensions of the coordinates changing one value at a time to find the direction to move to find the minimum. 
+
+Imagine standing on a hill, and instead of looking where downhill is, you feel by moving left and right, and then choosing the direction that minimized your height. Then you move forward and backwards and minimize your height again. 
+
+**Algorithm**
+- Initialize starting point
+- Cycle through dimensions / directions
+- For each dimensions / direction $p_{k}$, perform a line search to find the optimal step length
+- Repeat until convergence
+
+Cycling through dimensions can be done:
+- $\texttt{cyclic}$: ($1 \dots n \quad \text{repeat}$);
+- $\texttt{back-and-forth}$: ($1 \dots n \dots 1 \quad \text{repeat}$);
+
+### Step Length: The Golden Section Method
+The bisection method was used to find the optimal step size $\alpha$. Bisection  requires the derivative $\phi '(\alpha)$ to check if the slope is positive or negative. Without derivatives, we use the Golden Section Method.
+- **Prerequisites:** The function $\phi(\alpha)$ must be unimodal on the interval $[L, U]$ (it has one unique minimum).
+- **Intuition:** To narrow down the interval $[L, U]$ without derivatives, we need to evaluate the function at two internal points, $M$ and $T$. To ensure the interval shrinks by a constant efficient ratio every time regardless of which side holds the minimum, we place these points using the Golden Ratio $\varphi \approx 1.618$.
+- **The Algorithm:**
+    1. **Initialize:** Bounds $L < M < U$ such that the ratio of segments corresponds to the Golden Ratio (specifically $(M-L)/(U-M) \in \{ \varphi, 1/\varphi \}$).
+    2. **Loop** while $(U - L) > \epsilon$:
+        - Pick a test point $T$ in the larger sub-interval (between $L$ and $M$ or $M$ and $U$).
+        - **Compare** $\phi(T)$ and $\phi(M)$:
+            - If $\phi(T) < \phi(M)$: The minimum is in the new smaller region around $T$. $T$ becomes the new "middle" $M$, and the bounds are tightened.
+            - If $\phi(T) \ge \phi(M)$: The minimum is likely around $M$. The bounds are tightened to exclude $T$.
+    3. **Result:** The interval shrinks linearly by a factor of $1/\varphi \approx 0.618$ per iteration.
+
+## Heuristic Line Search
+### Nelder-Mead Simplex Method
+This method is a 'direct search' method that does not approximate gradients but rather evolves a geometric shape to find the minimum. 
+
+#### The Simplex
+A simplex is a generalization of a triangle to $n$-dimensions. It consists of $n+1$ vertices.
+- In 2D: A triangle (3 points).
+- In 3D: A tetrahedron (4 points).
+
+#### [The Algorithm](https://www.youtube.com/watch?v=j2gcuRVbwR0)
+The method iteratively improves the worst point in the simplex.
+**Preparation:**
+1. Initialize $n+1$ vertices.
+2. **Order** them such that $f(x_1) \le f(x_2) \le \dots \le f(x_{n+1})$.
+    - $x_1$: Best point.
+    - $x_{n+1}$: Worst pointt
+3. Compute the **Centroid** $\bar{x}$ of the _best_ $n$ points (excluding the worst)
+**Iteration Steps** The algorithm attempts to replace the worst point $x_{n+1}$ using the following logic:
+4. **Reflection ($r$):**
+    - Reflect the worst point through the centroid: $r = \bar{x} + (\bar{x} - x_{n+1})$.
+    - _Intuition:_ If the worst point is high up a hill, the minimum is likely on the opposite side of the average.
+    - _Decision:_ If $f(x_1) \le f(r) < f(x_n)$, accept $r$.
+5. **Expansion ($e$):**
+    - If the Reflection $r$ is the new **best** point ($f(r) < f(x_1)$), we have found a very good direction. Go further.
+    - Compute $e = \bar{x} + 2(\bar{x} - x_{n+1})$.
+    - _Decision:_ Accept the best between $r$ and $e$.
+6. **Contraction ($c$):**
+    - If the Reflection $r$ is typically bad (worse than the second-worst point $x_n$), we overshot or are in a valley. We need to step back.
+    - _Outside Contraction:_ If $f(r) < f(x_{n+1})$, compute average between centroid and reflection.
+    - _Inside Contraction:_ If $f(r) \ge f(x_{n+1})$, compute average between centroid and worst point.
+    - _Decision:_ If the contraction point is better than the point it is based on, accept it.
+7. **Shrink:**
+    - If all else fails (Reflection and Contraction did not improve the worst point), the simplex is likely too large around a minimum.
+    - **Action:** Shrink the entire simplex towards the best point $x_1$. Replace all $x_j$ with $\frac{1}{2}(x_j + x_1)$.

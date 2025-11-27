@@ -17,12 +17,23 @@ This establishes that all interior extrema are [[Gradients#Stationary Points|sta
 
 ## Details
 ### Constraints vs. Unconstrained
-The theorem **only** holds for unconstrained problems or interior solutions of constrained problems.
+The theorem **only** holds for [[10_Concepts/Mathematical Optimization|unconstrained problems]] or interior solutions of constrained problems.
 * **Interior:** $\nabla f = 0$ (Fermat applies).
 * **Boundary:** $\nabla f \neq 0$ (Fermat fails; requires [[10_Concepts/Lagrange Multipliers|Lagrange Multipliers]]).
 
 ### Intuition
 If the slope were not zero, you could move slightly in the direction of the slope to find a lower (or higher) value, implying the current point is not an extremum.
+
+## Convex Fermat Theorem
+For a convex function $f$, a point $x^*$ is a [[10_Concepts/Minimizers|global minimizer]] if and only if the **zero vector** is contained in the **[[10_Concepts/Subderivatives|subdifferential]]** of $f$ at $x^*$.
+
+Mathematically, this is written as:
+$$x^* \in \underset{x}{\text{argmin}} f(x) \iff 0 \in \partial f(x^*)$$
+Where:
+- $x^*$ is the point we are testing.
+- $\partial f(x^*)$ is the **[[10_Concepts/Subderivatives|subdifferential]]** (the set of all subgradients) at that point.
+- $0$ is the zero vector.
+
 
 ---
 
