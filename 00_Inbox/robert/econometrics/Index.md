@@ -23,6 +23,7 @@ Block 2 (27 Okt. - 21 Dec.)
 	- [[00_Inbox/robert/econometrics/FEB22006X Non-linear Opt/Non-linear Optimisation]]
 - FEB22008X Markov Processes
 	- 100% Written exam
+	- Open book -> Take what you want except phones and laptops
 	- [[00_Inbox/robert/econometrics/FEB22008X Markov Processes/Markov Processes]]
 - FEB21020X Microeconomics (econometrics)
 	- 100% Written exam

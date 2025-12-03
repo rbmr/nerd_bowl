@@ -59,18 +59,20 @@ Limiting behaviour
 - If $\pi$ exists it is the unique solution of the steady-state equations. 
 
 Questions to be handled when starting from a transient state:
-- Mean time spent in transient states
+- Mean time spent in transient states $s_{ij}$.
 	- Let $s_{ij}$ be the expected number of time periods the Markov chain is in state $j$, given that it started in state $i$. $$s_{ij} = \begin{cases}1 + \sum_{k}P_{ik}s_{kj} & \text{if } i=j \\ \sum_{k} P_{ik}s_{kj} & \text{if } i \neq j \end{cases}$$
 	- Suppose then, all transient states in a Markov chain are in a set $T = \{1,\dots,t\}$, while the other recurrent states are in $\{t+1,\dots\}$. Only a transient state can transition to another transient state, therefore: $$s_{ij} = \begin{cases}1 + \sum_{k=1}^tP_{ik}s_{kj} & \text{if } i=j \\ \sum_{k=1}^t P_{ik}s_{kj} & \text{if } i \neq j \end{cases}$$
 	- Let $\mathbf{P}_T$ be the $t \times t$ submatrix of the transition matrix $\mathbf{P}$ corresponding only to the transient states $T$. Let $\mathbf{S}$ be the $t \times t$ matrix of expected values to be solved, where the entry $s_{ij}$ corresponds to the expected time in $j$ starting from $i$. Then we can write as $\mathbf{S} = \mathbf{I} + \mathbf{P}_T\mathbf{S}$, which can computed using $\mathbf{S} = (\mathbf{I} - \mathbf{P}_T)^{-1}$.
--  Probability of entering a transient state 
+-  Probability of entering a transient state $f_{ij}$.
 	- Let $f_{ij}$ denote the probability that the Markov chain ever enters state $j$ given that it starts in state $i$. 
 	- If the chain _never_ enters state $j$, the time spent there is $0$. This yields the following equation: $$s_{ij} = \begin{cases} f_{ij}s_{jj} & \text{if } i \neq j \\ 1 + f_{jj}s_{jj} & \text{if } i = j \end{cases}$$
 	- We then rearrange to solve for the probability $f_{ij}$:$$f_{ij} = \begin{cases} \frac{s_{ij}}{s_{jj}} & \text{if } i \neq j \\ \frac{s_{jj} - 1}{s_{jj}} & \text{if } i = j \end{cases}$$
-- Expected steps to a recurrent class
+- Expected steps to a recurrent class $m_{iR}$.
 	- Suppose there is only one recurrent class, denoted by $R$. For a transient state $i$, define $m_{iR}$ as the mean time it takes to enter $R$. We obtain: $m_{iR}=1+\sum_{j \in T}P_{ij}m_{jR}$.
 	- Let $\mathbf{m} = (m_{1R}, m_{2R}, \dots, m_{tR})^T$, then $\mathbf{m} = \mathbf{1} + \mathbf{P}_{T}\mathbf{m}$ which gives $\mathbf{m}=(I-\mathbf{P}_{T})^{-1}\cdot \mathbf{1} = \mathbf{S} \cdot \mathbf{1}$. 
 	- Looking at the definition of $s$, this solution should be unsurprising.
-- What is the chance to land in a specific recurrent class (if many)?
+- Probability of landing in a specific recurrent class $f_{iR_1}$.
+	- Assume there are multiple recurrent classes $R_1, R_2, \dots$. We want to find $f_{iR_1}$, the probability that the Markov chain ever enters the specific recurrent class $R_1$, given it starts in transient state $i$. we obtain $f_{iR_1} = \sum_{j \in R_1}P_{ij} + \sum_{j \in T} P_{ij}f_{jR_1}$.
+	- Let $\mathbf{f}_{R_1}$ be the vector of probabilities for the transient states. Let $\mathbf{p}_{R_1}$ be a vector where the $i$-th entry is $\sum_{j \in R_1}P_{ij}$. Then the system can be written as $\mathbf{f}_{R_1} = \mathbf{p}_{R_1} + \mathbf{P}_T\mathbf{f}_{R_1}$, which can be rewritten as $\mathbf{f}_{R_1} = (I - \mathbf{P}_T)^{-1} \cdot \mathbf{p}_{R_1} = \mathbf{S} \cdot \mathbf{p}_{R_1}$.
 - 
 
