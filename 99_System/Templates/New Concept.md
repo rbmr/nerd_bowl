@@ -4,30 +4,15 @@ aliases: []
 status: not_started
 created: <% tp.file.creation_date() %>
 ---
-# <% tp.file.title %>
+### <% tp.file.title %>
 
-## Summary
 
-## Details
 
 ---
 
 # Related
 ```dataviewjs
-// Get the tags of the current file
-const currentTags = dv.current().file.tags;
-
-// List pages from "10_Concepts"
-dv.list(dv.pages('"10_Concepts"')
-    .where(p => 
-        // 1. Exclude the current file
-        p.file.name != dv.current().file.name &&
-        // 2. Check if ANY tag in the candidate page exists in currentTags
-        p.file.tags.some(t => currentTags.includes(t))
-    )
-    .limit(10)
-    .file.link
-)
+await dv.view("99_System/Scripts/tag_tables", dv.current());
 ```
 
 ### Direct Links to this document
