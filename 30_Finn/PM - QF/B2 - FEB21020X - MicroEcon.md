@@ -48,7 +48,27 @@ The course aims to provide students with a foundational understanding of basic m
 
 ## Chapter 2: Supply and Demand
 
+### Market Forces
+![[10_Concepts/Market Demand#Market Demand]]
 
+
+![[10_Concepts/Normal vs. Inferior Goods#Normal vs. Inferior Goods]]
+
+![[10_Concepts/Substitutes and Complements#Substitutes and Complements]]
+
+![[10_Concepts/Market Supply#Market Supply]]
+### Market Mechanics
+![[10_Concepts/Market Equilibrium#Market Equilibrium]]
+
+![[10_Concepts/Market Disequilibrium#Market Disequilibrium]]
+### Theoretical Functions of Price
+![[10_Concepts/Functions of Price#Functions of Price]]
+
+### Welfare and Efficiency
+![[10_Concepts/Pareto Efficiency#Pareto Efficiency]]
+
+### Government Intervention
+![[10_Concepts/Price Controls#Price Controls]]
 
 ## Chapter 3:
 
