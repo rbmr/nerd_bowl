@@ -114,12 +114,54 @@ The course aims to provide students with a foundational understanding of basic m
 ![[10_Concepts/Utility Maximization#Utility Maximization]]
 
 ## Chapter 5: Individual and Market Demand
+![[10_Concepts/Comparative Statics#Comparative Statics]]
+![[10_Concepts/Comparative Statics#Comparative Statics in Economics]]
 
+![[10_Concepts/Price-Consumption Curve#Price-Consumption Curve]]
 
+![[10_Concepts/Income-Consumption Curve#Income-Consumption Curve]]
+
+![[10_Concepts/Individual Demand#Individual Demand]]
+
+![[10_Concepts/Engel Curve#Engel Curve]]
+
+![[10_Concepts/Income and Substitution Effects#income and substitution effects]]
+
+![[10_Concepts/Price Elasticity of Demand#Price Elasticity of Demand]]
+
+![[10_Concepts/Total Expenditure#Total Expenditure]]
+
+![[10_Concepts/Constant Elasticity Demand Function#Constant Elasticity Demand Function]]
+
+![[10_Concepts/Income Elasticity of Demand#Income Elasticity of Demand]]
+
+![[10_Concepts/Cross-Price Elasticity of Demand#Cross-Price Elasticity of Demand]]
 ## Chapter 6: Applications of Rational Choice and Demand Theories
 
-## Chapter 7: Choice Under Uncertainty and The Economics of Information
+![[10_Concepts/Tax Incidence#Tax Incidence]]
 
+![[10_Concepts/Subsidies#Subsidies]]
+
+
+![[10_Concepts/Marshallian Demand Curve#Marshallian Demand Curve]]
+
+![[10_Concepts/Hicksian Demand Curve#Hicksian Demand Curve]]
+
+
+![[10_Concepts/Welfare Economics#Welfare Economics]]
+
+![[Price Indices#Price Indices]]
+
+![[10_Concepts/Consumer Price Index#Consumer Price Index]]
+
+![[10_Concepts/Pricing Strategies#Pricing Strategies]]
+
+![[10_Concepts/Two-Part Tariff#Two-Part Tariff]]
+
+## Chapter 7: Choice Under Uncertainty and The Economics of Information
+![[10_Concepts/Expected Value#Expected Value]]
+
+![[Utility Theory#Expected Utility Theory]]
 ## Chapter 8: Explaining Tastes: The importance of Altruism and Other Non-Egoistic Behavior
 
 ## Chapter 9: Cognitive Limitations and Consumer Behavior

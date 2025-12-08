@@ -9,14 +9,14 @@ status: good_enough
 created: 2025-12-05 15:43
 ---
 ### Market Demand
-Market Demand represent the aggregate quantity of a good or service that consumers are willing and able to purchase at various price levels, holding all other factors constant. 
+Market Demand represent the aggregate quantity of a good or service that all consumers combined are willing and able to purchase at various price levels, holding all other factors constant. 
 
 The fundamental characteristic of market demand is the **Law of Demand**, which posits an inverse relationship between price and quantity demanded: as the price falls, the quantity demanded increases, and conversely, as price rises, quantity demanded falls. 
 
-
 #### Mathematical Representation
-- **Horizontal Interpretation (Standard Demand Function):** $Q^d = f(P)$
-- **Vertical Interpretation (Inverse Demand Function):** $P = f^{-1}(Q^d)$
+- **Horizontal Interpretation (Standard Demand Function):** to generate market demand, one must sum the [[Individual Demand|individual demand]] curves horizontally. This involves fixing a specific price and adding the quantities demanded by each consumer at that price: $Q^d_{market} = f(P) = \sum_{i=1}^{n} Q_i(P)$
+	- **Identical Consumers:** If there are $n$ identical consumers each with demand curve $P = a - bQ_i$, the market demand is $P = a - (b/n)Q$.
+- **Vertical Interpretation(Inverse Demand Function):** $P = f^{-1}(Q^d)$
 - $Q^d$ is the quantity demanded.
 - $P$ is the unit price.
 
