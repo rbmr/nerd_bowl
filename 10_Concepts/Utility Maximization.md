@@ -20,12 +20,8 @@ $$
 
 The rate at which the consumer is willing to trade X for Y is exactly equal to the rate at which the market allows them to trade X for Y. 
 
-#### The Equimarginal Principle (Gossen's Second Law)
-By substituting $MRS = \frac{MU_X}{MU_Y}$  from [[Marginal Utility#Relationship to MRS]] into the tangency condition, we derive the Equimarginal Principle:
 
-$$\frac{MU_X}{MU_Y} = \frac{P_X}{P_Y} \implies \frac{MU_X}{P_X} = \frac{MU_Y}{P_Y}$$
-
-**Interpretation:** At the optimal bundle, the marginal utility per unit of currency spent must be equal across all goods. If $\frac{MU_X}{P_X} > \frac{MU_Y}{P_Y}$, the consumer could increase total utility by shifting spending from Y to X.
+![[Equimarginal Principle#Equimarginal Principle (Gossen's Second Law) (Consumer Theory)]]
 
 #### Lagrangian Optimization (applied to economics)
 Using the [[Mathematical Optimization#Constrained Optimization|constrained optimization]] solving method that uses Lagrangian multipliers to turn constrained problems into unconstrained problems, we can maximize utility with [[Budget Constraint]]s. 

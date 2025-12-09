@@ -236,9 +236,48 @@ The course aims to provide students with a foundational understanding of basic m
 ---
 ---
 ## Chapter 10: Production
+![[10_Concepts/Production Theory#Production Theory]]
 
+![[10_Concepts/Factors of Production#Factors of Production]]
+
+![[Production Functions#Production Functions]]
+![[10_Concepts/Production Horizons#Production Horizons]]
+
+![[10_Concepts/Total Product Curve#Total Product Curve]]
+![[10_Concepts/Marginal Product#Marginal Product]]
+![[10_Concepts/Average Product#Average Product]]
+![[10_Concepts/Law of Diminishing Marginal Returns#Law of Diminishing Marginal Returns]]
+
+![[10_Concepts/Isoquant#isoquant]]
+![[10_Concepts/Marginal Rate of Technical Substitution#Marginal Rate of Technical Substitution]]
+
+![[10_Concepts/Returns to Scale#Returns to Scale]]
+
+![[10_Concepts/Cobb-Douglas Production Function#Cobb-Douglas Production Function]]
+![[10_Concepts/Leontief Production Function#Leontief Production Function]]
+![[10_Concepts/Linear Production Function#Linear Production Function]]
+
+![[Equimarginal Principle#Equimarginal Principle (Production Theory)]]
 
 ## Chapter 11: Costs
+![[10_Concepts/Theory of Cost#Theory of Cost]]
+
+![[10_Concepts/Short-Run Cost Structure#Short-Run Cost Structure]]
+
+![[10_Concepts/Marginal Cost#Marginal Cost(Production)]]
+
+![[10_Concepts/Duality of Production and Cost#Duality of Production and Cost]]
+
+![[10_Concepts/Isocost Line#Isocost Line]]
+
+![[10_Concepts/Production Cost Minimization#Production Cost Minization]]
+
+![[10_Concepts/Long-Run Cost Structure#Long-Run Cost Structure]]
+
+![[10_Concepts/Economies of Scale#Economies of Scale]]
+
+![[10_Concepts/Relationship between Short-Run and Long-Run Costs#Relationship between Short-Run and Long-Run Costs]]
+
 
 ## Chapter 12: Perfect Competition
 
