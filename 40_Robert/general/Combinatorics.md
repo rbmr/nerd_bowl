@@ -1,0 +1,2 @@
+**Permutations** $P(n,k)$ are the number of ways to select and arrange $k$ distinct items from a larger set of $n$ distinct items. $$P(n,k)=n \times (n-1) \times \dots \times (n-k +1) = \frac{n!}{(n-k)!}$$
+**$n$ choose $k$ $\binom{n}{k}$** are the number of ways to choose a subset of $k$ distinct items from a larger set of $n$ distinct items, where the order of selection is irrelevant. We take the total number of *ordered* lists, and divide it by the number of possible orderings.$$\binom{n}{k}=\frac{P(n,k)}{P(k,k)}=\frac{\frac{n!}{(n-k)!}}{k!}= \frac{n!}{k!(n-k)!}$$

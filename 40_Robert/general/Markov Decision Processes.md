@@ -13,7 +13,6 @@ For the model to be accurate, we rely on one critical constraint:
 > The Markov Property: The future is independent of the past, given the present.
 
 This means the probability of the next state $s'$ and rewards $r$ depend only on the current state $s$ and the chosen action $a$.
-
 ### Horizon and Return
 The goal for any agent is to maximize the return. The return $G_t$ is defined as the (discounted $\gamma \in [0,1]$) sum of rewards $r$, starting from timestep $t$. We distinguish between two cases:
 
