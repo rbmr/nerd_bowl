@@ -41,6 +41,7 @@ $$CV > \Delta CS > EV$$
 - **Small Income Effects:** If income effects are small, the three measures converge: $CV \approx \Delta CS \approx EV$.
 
 
+
 ---
 
 # Related

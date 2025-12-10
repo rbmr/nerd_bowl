@@ -10,6 +10,8 @@ created: 2025-12-08 14:27
 ### Utility Maximization
 Utility Maximization is the process by which a rational consumer chooses the best bundle. 
 
+Look at [[Production Cost Minimization]], it is related.
+
 #### Tangency Condition
 For smooth, convex [[Indifference Curves]], the optimal bundle for an interior solution occurs at the point of tangency between the budget line and an indifference curve. 
 

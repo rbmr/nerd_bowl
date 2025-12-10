@@ -15,7 +15,7 @@ Economies of scale describe how [[Long-Run Cost Structure|long-run average costs
 
 **Diseconomies of Scale**
 - Ouput grows less than in proportion to inputs
-- LAC Shape is upward slopeing. LAC rise as output increases. 
+- LAC Shape is upward slope-ing. LAC rise as output increases. 
 
 **Constant Returns to Scale**
 - Output grows exactly in proportion to inputs
