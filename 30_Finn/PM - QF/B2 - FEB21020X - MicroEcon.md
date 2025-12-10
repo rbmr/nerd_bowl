@@ -264,13 +264,11 @@ The course aims to provide students with a foundational understanding of basic m
 
 ![[10_Concepts/Short-Run Cost Structure#Short-Run Cost Structure]]
 
-![[10_Concepts/Marginal Cost#Marginal Cost(Production)]]
-
 ![[10_Concepts/Duality of Production and Cost#Duality of Production and Cost]]
 
 ![[10_Concepts/Isocost Line#Isocost Line]]
 
-![[10_Concepts/Production Cost Minimization#Production Cost Minization]]
+![[10_Concepts/Production Cost Minimization#Production Cost Minimization]]
 
 ![[10_Concepts/Long-Run Cost Structure#Long-Run Cost Structure]]
 
