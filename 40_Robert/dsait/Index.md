@@ -12,7 +12,7 @@ Q1 (1 Sep. - 9 Nov.)
     - [DSAIT4005 MDL](DSAIT4005%20MDL.md)
 - DSAIT4010 **Probabilistic AI and Reasoning**
     - 100% Written exam
-    - [Probabilistic AI and Reasoning](00_Inbox/robert/dsait/DSAIT4010%20PAIR/Probabilistic%20AI%20and%20Reasoning.md)
+    - [Probabilistic AI and Reasoning](Probabilistic%20AI%20and%20Reasoning.md)
 
 Q2 (10 Nov. - 1 Feb.)
 

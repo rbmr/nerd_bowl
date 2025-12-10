@@ -20,15 +20,15 @@ Block 2 (27 Okt. - 21 Dec.)
 	- 20% Individual assignment
 		- Assignment 1 (18 Nov at 23.59)
 	- 80% Written exam
-	- [[00_Inbox/robert/econometrics/FEB22006X Non-linear Opt/Non-linear Optimisation]]
+	- [[Non-linear Optimisation]]
 - FEB22008X Markov Processes
 	- 100% Written exam
 	- Open book -> Take what you want except phones and laptops
-	- [[00_Inbox/robert/econometrics/FEB22008X Markov Processes/Markov Processes]]
+	- [[Markov Processes]]
 - FEB21020X Microeconomics (econometrics)
 	- 100% Written exam
 	- (or 10% attendance grade)
-	- [[00_Inbox/robert/econometrics/FEB21020X Microeconomics/Microeconomics]]
+	- [[Microeconomics]]
 
 Block 3 (5 Jan. - 1 Mar.)
 

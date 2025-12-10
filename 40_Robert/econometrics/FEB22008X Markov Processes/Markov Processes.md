@@ -1,3 +1,16 @@
+Background
+
+|                 | Mass Function (Discrete RV)                                      | Density Function (Continuous RV)                                 |
+| :-------------- | :--------------------------------------------------------------- | :--------------------------------------------------------------- |
+| **Joint**       | $p(x,y) = \mathbb{P}(X=x, Y=y)$                                  | $\mathbb{P}((X,Y) \in A) = \int\int_{A}f(x,y)dxdy$               |
+| **Marginal**    | $p_X(x) = \sum_{y} p(x,y)$                                       | $f_X(x) = \int_{-\infty}^{\infty} f(x,y)dy$                      |
+| **Conditional** | $p_{X\mid Y}(x\mid y) = \frac{p(x,y)}{p_Y(y)}$, for $p_Y(y) > 0$ | $f_{X\mid Y}(x\mid y) = \frac{f(x,y)}{f_Y(y)}$, for $f_Y(y) > 0$ |
+
+|                  | Expectation                                                                                   | Variance                                                                            |
+| :--------------- | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| **Conditional**  | $\mathbb{E}(h(X) \mid Y)$: A random variable $u(Y)$, where $u(y) = \mathbb{E}(h(X)\mid Y=y)$. | $\text{Var}(X\mid Y) = \mathbb{E}(X^2\mid Y) - (\mathbb{E}(X\mid Y))^2$             |
+| **Law of Total** | $\mathbb{E}(X) = \mathbb{E}(\mathbb{E}(X\mid Y))$                                             | $\text{Var}(X) = \mathbb{E}(\text{Var}(X\mid Y)) + \text{Var}(\mathbb{E}(X\mid Y))$ |
+
 Stochastic Processes vs Markov Chains
 - A compound random variable $S_N = \sum_{i=1}^{N} X_{i}$ is called a compound variable of iid random variables $X_1, X_2, \ldots, X_{N}$ with mean $\mu$. Then,
 	- $\mathbb{E}(S_N | N) = N\mu, \quad \mathbb{E}(S_N) = E(N) \mu$
@@ -74,5 +87,9 @@ Questions to be handled when starting from a transient state:
 - Probability of landing in a specific recurrent class $f_{iR_1}$.
 	- Assume there are multiple recurrent classes $R_1, R_2, \dots$. We want to find $f_{iR_1}$, the probability that the Markov chain ever enters the specific recurrent class $R_1$, given it starts in transient state $i$. we obtain $f_{iR_1} = \sum_{j \in R_1}P_{ij} + \sum_{j \in T} P_{ij}f_{jR_1}$.
 	- Let $\mathbf{f}_{R_1}$ be the vector of probabilities for the transient states. Let $\mathbf{p}_{R_1}$ be a vector where the $i$-th entry is $\sum_{j \in R_1}P_{ij}$. Then the system can be written as $\mathbf{f}_{R_1} = \mathbf{p}_{R_1} + \mathbf{P}_T\mathbf{f}_{R_1}$, which can be rewritten as $\mathbf{f}_{R_1} = (I - \mathbf{P}_T)^{-1} \cdot \mathbf{p}_{R_1} = \mathbf{S} \cdot \mathbf{p}_{R_1}$.
-- 
+
+Exponential Distributions
+
+
+
 

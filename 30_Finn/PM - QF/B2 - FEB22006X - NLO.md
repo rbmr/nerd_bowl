@@ -35,7 +35,7 @@ We focus on **Unconstrained Optimization** where $X = \mathbb{R}^n$. The goal is
 
 ### Minima vs Infima
 It is crucial to distinguish between the mathematical minimum and the infimum.
-
+ 
 ![[Optimal Values#Minimum]]
 
 ![[Optimal Values#Infinum]]
