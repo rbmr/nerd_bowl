@@ -28,6 +28,7 @@ Where:
 This solution is **[[10_Concepts/Pareto Optimality|Pareto Efficient]]**.
 At this equilibrium, excess demand and excess supply are exactly zero. 
 
+This standard model of Market Equilibrium assumes the axioms of [[Perfect Competition]].
 
 ---
 

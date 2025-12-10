@@ -278,8 +278,39 @@ The course aims to provide students with a foundational understanding of basic m
 
 
 ## Chapter 12: Perfect Competition
+![[10_Concepts/Economic Profit#Economic Profit]]
 
+![[10_Concepts/Perfect Competition#Perfect Competition]]
+
+![[Profit Maximization#Profit Maximization]]
+
+![[Market Supply#Production Horizons The Short Run Short-Run Industry Supply]]
+![[Market Supply#Production Horizons The Long Run Long-Run Industry Supply]]
+
+
+![[10_Concepts/Price Elasticity of Supply#Price Elasticity of Supply]]
+
+![[10_Concepts/Producer Surplus#Producer Surplus]]
+
+![[10_Concepts/Allocative Efficiency#Allocative Efficiency]]
 ## Chapter 13: Monopoly
+![[10_Concepts/Monopoly Market Structure#Monopoly Market Structure]]
+
+![[10_Concepts/Natural Monopoly#Natural Monopoly]]
+
+![[10_Concepts/Network Effects#Network Effects]]
+
+![[10_Concepts/Intellectual Property Rights#Intellectual Property Rights]]
+
+
+![[10_Concepts/Monopoly Pricing Strategy#Monopoly Pricing Strategy]]
+![[10_Concepts/Lerner Index#Lerner Index]]
+
+![[10_Concepts/X-Inefficiency#X-Inefficiency]]
+
+![[10_Concepts/Natural Monopoly Regulation#Natural Monopoly Regulation]]
+
+![[10_Concepts/Price Discrimination#Price Discrimination]]
 
 ## Chapter 14: Imperfect Competition
 

@@ -17,7 +17,7 @@ The rationing function of price is the **short-run** process by which market equ
 - **Condition:** This function operates on the distribution of output that _already exists_.
 
 #### Allocative Function
-The allocative function of price is the **long-run** process whereby prices act as signals that induce resources to migrate across different sectors of the economy.
+The allocative function of price is the **[[Production Horizons|long-run]]** process whereby prices act as signals that induce resources to migrate across different sectors of the economy.
 - **Signaling Mechanism:**
     - **Excess Demand (High Prices):** When firms can charge more than the cost of production, the resulting **profits** act as a "carrot," luring additional resources (capital, labor) into the industry.
     - **Excess Supply (Low Prices):** When prices fall below production costs, the resulting **losses** act as a "stick," driving resources out of the industry.
