@@ -88,8 +88,38 @@ Questions to be handled when starting from a transient state:
 	- Assume there are multiple recurrent classes $R_1, R_2, \dots$. We want to find $f_{iR_1}$, the probability that the Markov chain ever enters the specific recurrent class $R_1$, given it starts in transient state $i$. we obtain $f_{iR_1} = \sum_{j \in R_1}P_{ij} + \sum_{j \in T} P_{ij}f_{jR_1}$.
 	- Let $\mathbf{f}_{R_1}$ be the vector of probabilities for the transient states. Let $\mathbf{p}_{R_1}$ be a vector where the $i$-th entry is $\sum_{j \in R_1}P_{ij}$. Then the system can be written as $\mathbf{f}_{R_1} = \mathbf{p}_{R_1} + \mathbf{P}_T\mathbf{f}_{R_1}$, which can be rewritten as $\mathbf{f}_{R_1} = (I - \mathbf{P}_T)^{-1} \cdot \mathbf{p}_{R_1} = \mathbf{S} \cdot \mathbf{p}_{R_1}$.
 
-Exponential Distributions
+Poisson process Definitions
+- A stochastic process $\{N(t), t \ge 0\}$ is a **counting process** whenever $N(t)$ denotes the total number of events that occur by time $t$. It should satisfy: (1) $N(t) \ge 0$, (2) $N(t)$ is integer valued, and (3) For $s < t$, $N(s) \le N(t)$.
+	- A counting process has **independent increments** whenever the number of events that occur in one time interval is independent of the number of events that occur in another disjoint time interval.
+	- A counting process has **stationary increments** whenever the number of events that occur in any interval depends only on the length of the interval.
+- The counting process $\{N(t), t \ge 0\}$ is a **Poisson process** with rate $\lambda > 0$ when:
+	1. $N(0) = 0$
+	2. The process has independent increments
+	3. The number of events in any interval of length $t$ is Poisson distributed with mean $\lambda t$.
+	- (3) implies that a Poisson process has stationary increments
+- A function $g(\cdot)$ is said to be $o(\cdot)$ if $\lim_{ h \to 0 } \frac{g(h)}{h} = 0$. That is, $g(h)$ goes to zero faster than $h$ goes to zero.
+- The counting process $\{N(t), t \ge 0\}$ is a **Poisson process** with rate $\lambda > 0$ when:
+	1. $N(0) = 0$,
+	2. The process has stationary and independent increments.
+	3. $P(N(h) = 1) = \lambda h + o(h), \text{ as } h \to 0$ 
+		- "Probability of seeing an event in a tiny window is directly proportional to the length of that window."
+	4. $P(N(h) \ge 2) = o(h), \text{ as } h \to 0$ 
+		- "Probability of seeing two events in a tiny window is effectively zero."
+- Let $T_n$ be the time elapsed between the $(n-1)$-th event and the $n$-th event (for $n > 1$). The sequence $T_{1}, T_{2}, \dots$ consists of i.i.d **exponential** random variables with a common mean of $1/\lambda$.
+- Let $S_{n}$ be the arrival time of the $n$-th event, then $S_{n}$ is the sum of the first $n$ interarrival times. Therefore, $S_{n}$ follows a Gamma distribution with parameters $n$ and $\lambda$.
+- The number of events by time $t$ is at least $n$ if and only if the $n$-th arrival occurs by time $t$: $N(t) \ge n \iff S_n \le t$.
+- The counting process $\{N(t), t \ge 0\}$ is a **Poisson process** with rate $\lambda \gt 0$ where:$$N(t) \equiv \max \{n \mid S_n \le t\}$$
+- All three definitions (the standard distribution-based, the infinitesimal approximation, and this constructive definition) are equivalent.
 
+Poisson Process Properties
+- **Merging**: Suppose that $\{N_1(t), t \ge 0\}$ and $\{N_2(t), t \ge 0\}$ are **independent** Poisson processes with respective rates $\lambda_1$ and $\lambda_2$. Let $N(t) = N_1(t) + N_2(t)$, for $t \ge 0$, then:
+    - $\{N(t), t \ge 0\}$ is a Poisson process with rate $\lambda = \lambda_1 + \lambda_2$.
+    - The probability that an arrival in the merged process is of type $i$ is $\lambda_i/(\lambda_1 + \lambda_2)$.
+- **Decomposing**: Consider a Poisson process $\{N(t), t \ge 0\}$ with rate $\lambda$. Suppose that each event in this process is classified as type I with probability $p$ and type II with probability $(1-p)$ independently of all other events. Let $N_1(t)$ and $N_2(t)$respectively denote the type I and type II events occurring in time $(0, t]$, then:
+	- The counting processes $\{N_1(t), t \ge 0\}$ and $\{N_2(t), t \ge 0\}$ are both Poisson processes with respective rates $\lambda p$ and $\lambda(1-p)$. 
+	- The two processes are independent.
+- If we know one event has occurred by time $t$ (i.e. $N(t)=1$), the time of that single event $T_{1}$ is uniformly distributed over the interval $(0,t)$. For any time $s$ where $s \le t$:$$\mathbb{P}(T_{1}<s|N(t)=1) = \frac{s}{t}$$
+- 
 
 
 

@@ -96,12 +96,27 @@ Inequalities
 - Chebyshev inequality: For every random variable $X$ with expected value $\mu$ and variance $\sigma^2 > 0$ it holds that for every $k \gt 0$: $P(|X - \mu| \geq k\sigma) \leq 1 / k^2$
     - consequently, $P(|X - \mu| \lt k\sigma) \geq 1- 1 / k^2$
 
+Joint, Marginal, and Conditional Distributions
+
+- Joint Distribution: Describes the probability behavior of two or more random variables $X$ and $Y$ simultaneously.
+    - Discrete (Joint PMF): $f_{X,Y}(x,y) = P(X=x, Y=y)$.
+        - Properties: $f_{X,Y}(x,y) \ge 0$ and $\sum_x \sum_y f_{X,Y}(x,y) = 1$.
+    - Continuous (Joint PDF): $f_{X,Y}(x,y)$ where $P((X,Y) \in A) = \iint_A f_{X,Y}(x,y) \, dx \, dy$
+        - Properties: $f_{X,Y}(x,y) \ge 0$ and $\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx \, dy = 1$.
+- Marginal Distribution: The distribution of a subset of the variables contained in the joint distribution (summing or integrating out the others).
+    - Discrete: $f_X(x) = \sum_{y} f_{X,Y}(x,y)$.
+    - Continuous: $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy$.
+- Conditional Distribution: The probability distribution of $X$ when $Y$ is known to be a specific value $y$.$$f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}, \quad f_Y(y) > 0$$        
+    - This forms a valid probability distribution (sums or integrates to 1 over $x$).
+- Independence: Two random variables $X$ and $Y$ are independent if and only if their joint distribution is the product of their marginals for all $x, y$.
+    - $f_{X,Y}(x,y) = f_X(x) \cdot f_Y(y)$
+
 Conditional expectation 
 
 - The **conditional expectation** of a random variable $X$ given that a random variable $Y$ has taken the value $y$, denoted as $E(X \mid Y=y)$, is the expected value of $X$ computed with respect to the conditional probability distribution $f_{X|Y}(x|y)$.
     - Discrete case: $E(X \mid Y=y) = \sum_{x} x \cdot P(X=x \mid Y=y)$
     - Continuous case: $E(X \mid Y=y) = \int_{-\infty}^{\infty} x \cdot f_{X|Y}(x|y) \, dx$
-- **Note:** While $E(X \mid Y=y)$ is a value (a function of $y$), $E(X \mid Y)$ is a random variable that depends on the outcome of $Y$.
+- **Note:** While $E(X \mid Y=y)$ is a a function of $y$, $E(X \mid Y)$ is a random variable that depends on the outcome of $Y$.
 - **Law of Total Expectation** states that the expected value of $X$ is equal to the expected value of the conditional expectation of $X$ given $Y$: $E(X) = E(E(X \mid Y))$.
 	- Discrete: $E(X) = \sum_{y} E(X \mid Y=y) \cdot P(Y=y)$
 	- Continuous: $E(X) = \int_{-\infty}^{\infty} E(X \mid Y=y) \cdot f_Y(y) \, dy$
