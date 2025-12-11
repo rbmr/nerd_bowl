@@ -22,7 +22,7 @@ Poisson Process Family
 
 - The **Poisson** distribution models the number of events occurring in a fixed interval given a constant average rate $\lambda$. 
 	- It is derived from the Binomial distribution by letting $n \to \infty$ and $p \to 0$ such that $\lambda = np$ remains constant.
-- The **Exponential** distribution models the waiting time until the **1st** event occurs in a Poisson process. 
+- The **Exponential** distribution models the waiting time until the **1st** event occurs in a Poisson process, where the average waiting time is $\theta = \frac{1}{\lambda}$.
 	- It is the continuous analog of the Geometric distribution. 
 - The **Gamma** distribution models the waiting time until the **$\kappa$-th** event occurs in a Poisson process. It is the sum of $\kappa$ independent Exponential variables.
 - The **Weibull** distribution generalizes the Exponential distribution to allow for changing failure rates over time.
