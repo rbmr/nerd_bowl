@@ -116,8 +116,18 @@ Poisson Process Properties
 
 Continuous-time Markov chains
 - You can think of Continuous-time Markov chains as a Discrete-Time Markov Chain that dictates the path, but instead of taking 1 unit of time per step, the process "pauses" at every node for a random, exponentially distributed amount of time (similar to a Poisson process).
-- Let $\{X(t), t \geq 0\}$ be a continuous-time stochastic process taking values in $\{0, 1, 2, \ldots\}$, and let $\{x(t), t \geq 0\}$ be any deterministic function taking values in $\{0, 1, 2, \ldots\}$. The process $\{X(t), t \geq 0\}$ is called a **continuous-time Markov chain** if $$\begin{align} & P(X(t+s) = j \mid X(s) = i, X(u) = x(u), 0 \leq u < s)=\\&P(X(t+s) = j \mid X(s) = i)\end{align}$$
+- Let $\{X(t), t \geq 0\}$ be a continuous-time stochastic process,  taking values in $\mathbb{Z}$, and let $\{x(t), t \geq 0\}$ be *any* deterministic function taking values in $\mathbb{Z}$. The process $\{X(t), t \geq 0\}$ is called a **continuous-time Markov chain** if $$\begin{align} & P(X(t+s) = j \mid X(s) = i, X(u) = x(u), 0 \leq u < s)=\\&P(X(t+s) = j \mid X(s) = i)\end{align}$$
 - If a continuous-time Markov chain $\{X(t), t \geq 0\}$ satisfies $$P(X(t+s) = j \mid X(s) = i) = P(X(t) = j \mid X(0) = i)$$for every $s, t \geq 0$, then $\{X(t), t \geq 0\}$ is **stationary** (or **time-homogeneous**).
 - Let $T_i$ denote the time the process spends in state $i$ before making a transition into a different state (called sojourn time in state $i$). $T_{i}$ is memoryless, and must therefore have an exponential distribution with rate $v_{i}$.
 - Let $P_{ij}$ denote the probability of transitioning to state $j$, given that the current state is $i$. The transition probabilities $P_{ij}$ satisfy (1) $P_{ii} = 0$, and (2) $\sum_{j}P_{ij}=1$.
-- 
+
+Birth and Death processes
+- If only transitions from $i$ to $i-1$ (departures/deaths) or $i+1$ (arrivals/births) are allowed, then the process is called a birth and death process. For a state $i$ we say arrivals occur with rate $\lambda_{i}$, and departures occur with rate $\mu_{i}$. 
+	- To avoid negative states we may require that $\mu_0 = 0$. 
+	- A pure birth process is a birth and death process where $\mu_i = 0$ for all $i \in \mathbb{Z}$.
+	- A pure birth process with $X(0)=0$ is a counting process.
+	- A counting process where the the arrival rate is equal for all states is a Poisson process.
+- Per the minimum of two exponential distributions:
+	- Given current state $i$, the probability that the next transition corresponds to an arrival is $P_{i,i+1} = \frac{\lambda_{i}}{\lambda_{i}+\mu_{i}}$, and $P_{i,i-1} = \frac{\mu_{i}}{\lambda_{i}+\mu_{i}}$.
+	- Given current state $i$, the rate at which the process leaves the state is $\lambda_{i} + \mu_{i}$.
+
