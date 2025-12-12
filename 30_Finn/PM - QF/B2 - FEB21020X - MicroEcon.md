@@ -313,6 +313,12 @@ The course aims to provide students with a foundational understanding of basic m
 ![[10_Concepts/Price Discrimination#Price Discrimination]]
 
 ## Chapter 14: Imperfect Competition
+![[10_Concepts/Monopolistic Competition#Monopolistic Competition]]
+
+![[Spatial Model of Product Differentiation#Spatial Model of Product Differentiation]]
+
+![[10_Concepts/Oligopoly#Oligopoly]]
+
 
 
 ---

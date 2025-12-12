@@ -34,7 +34,7 @@ We use a flat, ID-based structure to prevent nesting hell.
 ---
 ## Concept Splitting
 - Concepts can start broad, e.g. Probability Theory, or Loss Functions
-- Using Headings sub-topics can be specified and linked to from other documents (e.g. Loss Functions#MSE)
+- Using Headings sub-topics or specific parts of a concept can be specified and linked to from other documents (e.g. Search Theory#Economic Application)
 - Obsidian allows for these headings to be extracted into new documents, and links to be refactored accordingly.
 - Concepts can be split up based on this video: 
 
@@ -163,12 +163,12 @@ Make sure to put them fully on a new line. Otherwise there will be parsing issue
 ```markdown
 
 WRONG:
-blablabla $$
+lorem ipsum $$
 FORMULA
 $$
 
 RIGHT:
-bklaskjdfs
+lorem ipsum
 $$
 FORMULA
 $$
