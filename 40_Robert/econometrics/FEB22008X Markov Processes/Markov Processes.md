@@ -5,7 +5,8 @@ Stochastic Processes vs Markov Chains
 - A stochastic process is a collection of (infinitely many) random variables. Often used to describe the behaviour of a system that evolves randomly in time. 
 	- Time: Discrete if the collection has (countably in)finite number of random variables, Continuous otherwise.
 	- Space: Discrete if the individual random variables are discrete, continuous if they are continuous.
-- A stochastic process is is a discrete time Markov chain if, for all states $i, j, s_0, ..., s_{n-1} \in S$,  $\mathbb{P}(X_{n+1} = j \mid X_n = i, X_{n-1} = s_{n-1}, \dots, X_0 = s_0) \\ = \mathbb{P}(X_{n+1} = j \mid X_n = i)$.
+- A stochastic process is is a **discrete time Markov chain** if, for all states $i, j, s_0, ..., s_{n-1} \in S$,  $\mathbb{P}(X_{n+1} = j \mid X_n = i, X_{n-1} = s_{n-1}, \dots, X_0 = s_0) \\ = \mathbb{P}(X_{n+1} = j \mid X_n = i)$.
+- A **random walk** is a Markov chain with state space given by $\mathbb{Z}$. At every state $i$ it may walk one step up to $i+1$ with probability $p$ or down to $i-1$ with probability $1-p$.
 
 Transitions
 - The conditional probabilities  $\mathbb{P}(X_{n+1} = j \mid X_n = i)$ are called 1-step probabilities from state $i$ to state $j$.
@@ -14,7 +15,6 @@ Transitions
 	1. Positive entries $P_{ij}\geq 0$ for all $i$ and $j$.
 	2. Rows summing up to 1: $\sum_{j\in S} P_{ij}=1$ for all $i$.
 - A transition diagram is a directed graph visualizing a Markov chain. Nodes are the states $i$, $j$, and edges are transitions, where each edge is labeled by the transition probability $P_{ij}$.
-- A **random walk** is a Markov chain with state space given by $\mathbb{Z}$. At every state $i$ it may walk one step up to $i+1$ with probability $p$ or down to $i-1$ with probability $1-p$.
 - The conditional probabilities $\mathbb{P}(X_n = j \mid X_0 = i) = P^{(n)}_{ij}$ are called n-step transition probabilities. 
 - An efficient way to calculate n-step transition probabilities is are the Chapman-Kolmogorov equations.  $P^{(n+m)}_{i,j} = \sum_{k \in S} P^{(n)}_{i,k} P^{(m)}_{k,j}$.
 	- If we denote the $n$-step transition matrix by $P^{(n)}$ then we can write the equation in the form of a matrix product $P^{(n+m)}=P^{(n)}P^{(m)}$.
@@ -75,6 +75,27 @@ Questions to be handled when starting from a transient state:
 	- Assume there are multiple recurrent classes $R_1, R_2, \dots$. We want to find $f_{iR_1}$, the probability that the Markov chain ever enters the specific recurrent class $R_1$, given it starts in transient state $i$. we obtain $f_{iR_1} = \sum_{j \in R_1}P_{ij} + \sum_{j \in T} P_{ij}f_{jR_1}$.
 	- Let $\mathbf{f}_{R_1}$ be the vector of probabilities for the transient states. Let $\mathbf{p}_{R_1}$ be a vector where the $i$-th entry is $\sum_{j \in R_1}P_{ij}$. Then the system can be written as $\mathbf{f}_{R_1} = \mathbf{p}_{R_1} + \mathbf{P}_T\mathbf{f}_{R_1}$, which can be rewritten as $\mathbf{f}_{R_1} = (I - \mathbf{P}_T)^{-1} \cdot \mathbf{p}_{R_1} = \mathbf{S} \cdot \mathbf{p}_{R_1}$.
 
+Continuous-time Markov chains
+- You can think of Continuous-time Markov chains as a Discrete-Time Markov Chain that dictates the path, but instead of taking 1 unit of time per step, the process "pauses" at every node for a random, exponentially distributed amount of time.
+- Let $\{X(t), t \geq 0\}$ be a continuous-time stochastic process,  taking values in $\mathbb{Z}$, and let $\{x(t), t \geq 0\}$ be *any* deterministic function taking values in $\mathbb{Z}$. The process $\{X(t), t \geq 0\}$ is called a **continuous-time Markov chain** if $$\begin{align} & P(X(t+s) = j \mid X(s) = i, X(u) = x(u), 0 \leq u < s)=\\&P(X(t+s) = j \mid X(s) = i)\end{align}$$ for every $s, t \geq 0$.
+- If a continuous-time Markov chain $\{X(t), t \geq 0\}$ satisfies $$P(X(t+s) = j \mid X(s) = i) = P(X(t) = j \mid X(0) = i)$$for every $s, t \geq 0$, then $\{X(t), t \geq 0\}$ is **stationary** (or **time-homogeneous**).
+- Let $T_i$ denote the time the process spends in state $i$ before making a transition into a different state (called sojourn time in state $i$). 
+	- Since $T_{i}$ is memoryless, it must follow some exponential distribution.
+- Let $P_{ij}$ denote the probability of transitioning to state $j$, given that the current state is $i$. The transition probabilities $P_{ij}$ satisfy (1) $P_{ii} = 0$, and (2) $\sum_{j}P_{ij}=1$.
+
+Transitions
+- 
+
+Birth and Death processes
+- If only transitions from $i$ to $i-1$ (departures/deaths) or $i+1$ (arrivals/births) are allowed, then the process is called a birth and death process. For a state $i$ we say arrivals occur with rate $\lambda_{i}$, and departures occur with rate $\mu_{i}$. 
+	- To avoid negative states we may require that $\mu_0 = 0$. 
+	- A pure birth process is a birth and death process where $\mu_i = 0$ for all $i \in \mathbb{Z}$.
+	- A **counting process** is a pure birth process with $X(0)=0$.
+	- A **Poisson process** is a counting process the arrival rate is equal for all states.
+- Per the minimum of two exponential distributions:
+	- Given current state $i$, the probability that the next transition corresponds to an arrival is $P_{i,i+1} = \frac{\lambda_{i}}{\lambda_{i}+\mu_{i}}$. Similarly, $P_{i,i-1} = \frac{\mu_{i}}{\lambda_{i}+\mu_{i}}$.
+	- Given current state $i$, the rate at which the process leaves the state is $\lambda_{i} + \mu_{i}$.
+
 Poisson process Definitions
 - A stochastic process $\{N(t), t \ge 0\}$ is a **counting process** whenever $N(t)$ denotes the total number of events that occur by time $t$. It should satisfy: (1) $N(t) \ge 0$, (2) $N(t)$ is integer valued, and (3) For $s < t$, $N(s) \le N(t)$.
 	- A counting process has **independent increments** whenever the number of events that occur in one time interval is independent of the number of events that occur in another disjoint time interval.
@@ -107,27 +128,8 @@ Poisson Process Properties
 	- The two processes are independent.
 - Conditional Arrival Distribution:
 	- If we know one event has occurred by time $t$ (i.e. $N(t)=1$), the time of that single event $T_{1}$ is uniformly distributed over the interval $(0,t)$. For any time $s$ where $s \le t$:$$\mathbb{P}(T_{1}<s|N(t)=1) = \frac{s}{t}$$
-	- If the random variables $U_{1}, U_{2}, \dots, U_{n}$ are uniformly distributed over $(0, t)$, then the joint density function of the order statistics $U_{(1)} \le U_{(2)} \le \dots \le U(n)$ becomes 
-		- $f(u_{1}, \dots, u_{n}) = \frac{n!}{t^n}, \quad u_{1} \le \dots \le u_{n} \le t$
+	- If the random variables $U_{1}, U_{2}, \dots, U_{n}$ are uniformly distributed over $(0, t)$, then the joint density function of the order statistics $U_{(1)} \le U_{(2)} \le \dots \le U(n)$ becomes $f(u_{1}, \dots, u_{n}) = \frac{n!}{t^n}, \quad u_{1} \le \dots \le u_{n} \le t$.
 	- Given that $N(t)=n$ the $n$ arrival times $S_{1}, \dots, S_{n}$ have the same distribution as the order statistics corresponding to $n$ independent random variables uniformly distributed on the interval $(0,t)$.
 	- For any operation where the order of arguments does not matter, you may ignore the sorting entirely, and treat the arrival times as independent uniform variables.
 - When the arrival rate of a Poisson process is a function of time, we speak of a **nonhomogeneous** or **nonstationary** Poisson process.
-	- If we let $m(t) = \int_{0}^{t} \lambda(y) \, dy$, then $N(s + t) - N(s)$ is a Poisson random variable with mean $m(s + t) - m(s)$.
-
-Continuous-time Markov chains
-- You can think of Continuous-time Markov chains as a Discrete-Time Markov Chain that dictates the path, but instead of taking 1 unit of time per step, the process "pauses" at every node for a random, exponentially distributed amount of time (similar to a Poisson process).
-- Let $\{X(t), t \geq 0\}$ be a continuous-time stochastic process,  taking values in $\mathbb{Z}$, and let $\{x(t), t \geq 0\}$ be *any* deterministic function taking values in $\mathbb{Z}$. The process $\{X(t), t \geq 0\}$ is called a **continuous-time Markov chain** if $$\begin{align} & P(X(t+s) = j \mid X(s) = i, X(u) = x(u), 0 \leq u < s)=\\&P(X(t+s) = j \mid X(s) = i)\end{align}$$
-- If a continuous-time Markov chain $\{X(t), t \geq 0\}$ satisfies $$P(X(t+s) = j \mid X(s) = i) = P(X(t) = j \mid X(0) = i)$$for every $s, t \geq 0$, then $\{X(t), t \geq 0\}$ is **stationary** (or **time-homogeneous**).
-- Let $T_i$ denote the time the process spends in state $i$ before making a transition into a different state (called sojourn time in state $i$). $T_{i}$ is memoryless, and must therefore have an exponential distribution with rate $v_{i}$.
-- Let $P_{ij}$ denote the probability of transitioning to state $j$, given that the current state is $i$. The transition probabilities $P_{ij}$ satisfy (1) $P_{ii} = 0$, and (2) $\sum_{j}P_{ij}=1$.
-
-Birth and Death processes
-- If only transitions from $i$ to $i-1$ (departures/deaths) or $i+1$ (arrivals/births) are allowed, then the process is called a birth and death process. For a state $i$ we say arrivals occur with rate $\lambda_{i}$, and departures occur with rate $\mu_{i}$. 
-	- To avoid negative states we may require that $\mu_0 = 0$. 
-	- A pure birth process is a birth and death process where $\mu_i = 0$ for all $i \in \mathbb{Z}$.
-	- A pure birth process with $X(0)=0$ is a counting process.
-	- A counting process where the the arrival rate is equal for all states is a Poisson process.
-- Per the minimum of two exponential distributions:
-	- Given current state $i$, the probability that the next transition corresponds to an arrival is $P_{i,i+1} = \frac{\lambda_{i}}{\lambda_{i}+\mu_{i}}$, and $P_{i,i-1} = \frac{\mu_{i}}{\lambda_{i}+\mu_{i}}$.
-	- Given current state $i$, the rate at which the process leaves the state is $\lambda_{i} + \mu_{i}$.
-
+	- If we let $m(t) = \int_{0}^{t} \lambda(y) \, dy$, then $N(s + t) - N(s)$ is a Poisson random variable with mean arrival time $m(s + t) - m(s)$.
