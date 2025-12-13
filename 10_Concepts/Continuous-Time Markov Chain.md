@@ -40,7 +40,7 @@ $$\lim_{h \to 0} \frac{1 - P_{ii}(h)}{h} = v_i$$
 $$\lim_{h \to 0} \frac{P_{ij}(h)}{h} = q_{ij} \quad (i \neq j)$$
     _Relationship:_ $q_{ij} = v_i P_{ij}^*$, where $P_{ij}^*$ is the probability of jumping to $j$ given a transition occurs out of $i$3. Note that $v_i = \sum_{j \neq i} q_{ij}$.
 
-### Stationary Continuous-Time Markov Chain
+#### Stationary Continuous-Time Markov Chain
 This is a sub-part referring specifically to a CTMC where the conditional transition probabilities are invariant under time shifts.
 $$P(X(t+s)=j \mid X(s)=i) = P(X(t)=j \mid X(0)=i)$$
 Most standard academic analyses assume stationarity unless specified otherwise.

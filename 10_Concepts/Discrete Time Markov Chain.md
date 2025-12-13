@@ -18,7 +18,7 @@ A Discrete-Time Markov Chain (DTMC) is a [[Stochastic Process]] $\{X_n, n \geq 0
 - **State Space ($S$):** The set of all possible values the process can assume. It must be countable (e.g., non-negative integers $\{0, 1, 2, \dots\}$) or finite.
 - **Time Parameter:** The index $n$ represents discrete time steps (e.g., days, turns, seconds), as opposed to continuous time.
 
-### Time-Homogeneous Markov Chain
+#### Time-Homogeneous Markov Chain
 A Markov chain is time-homogeneous (or has stationary transition probabilities) if the probability of moving from state $i$ to state $j$ is invariant with respect to the time step $n$.
 $$P(X_{n+1} = j \mid X_n = i) = P(X_{1} = j \mid X_0 = i) = P_{ij}$$
 

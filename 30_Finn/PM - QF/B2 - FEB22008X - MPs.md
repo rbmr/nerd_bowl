@@ -4,6 +4,12 @@
 
 ### Assessment
 
+# Question Types
+
+### Q1
+
+### Q2
+
 # Summary
 ## Foundations of Probability & Expectation Domain
 ![[10_Concepts/Random Variables#Random Variables]]
@@ -112,33 +118,41 @@
 
 ### Queueing Theory
 ![[10_Concepts/Kendall's Notation#Kendall's Notation]]
-![[10_Concepts/M-M-1 Queue Definition#M-M-1 Queue Definition]]
+![[10_Concepts/M-M-1 Queue Definition#M/M/1 Queue Definition]]
 
-![[10_Concepts/Queueing Performance Metrics#Queueing Performance Metrics]]
+![[10_Concepts/Queueing Performance Metrics#Average Number of Clients ($L$)]]
+
+![[10_Concepts/Queueing Performance Metrics#Average Sojourn Time ($W$)]]
+
+![[10_Concepts/Queueing Performance Metrics#Overall Arrival Rate ($ lambda$)]]
+
+![[10_Concepts/Queueing Performance Metrics#Long-Run Proportion of Clients ($a_n$ / $d_n$)]]
 
 ![[10_Concepts/Little's Law#Little's Law]]
 
 ![[10_Concepts/PASTA Principle#PASTA Principle]]
 
-![[10_Concepts/M-M-k-k Queue#M-M-k-k Queue]]
+![[10_Concepts/M-M-k-k Queue#M/M/k/k Queue (Erlang Loss System)]]
 
-![[10_Concepts/Local Balance Equations#Local Balance Equations]]
+![[Cut Equations#Cut Equations]]
 
 
 ## Brownian Motion
 
-RANDOM WALK -> add brownian motion application (Random Walk BM Construction, Rescaled Random Walk)
+![[10_Concepts/Random Walk Construction of Brownian Motion#Random Walk Construction of Brownian Motion]]
 
 ![[10_Concepts/Brownian Motion#Brownian Motion]]
-Starting conditions / marginals, Independent/stationary increments (BM), BM Characterizations, BM ALternative Characterization, 
+![[10_Concepts/Brownian Motion#Brownian Motion Starting Condition and Marginals]]
+![[Brownian Motion#Brownian Motion Increments]]
+![[10_Concepts/Brownian Motion#Brownian Motion Characterization (Three Properties)]]
+![[10_Concepts/Brownian Motion#Brownian Motion Alternative Characterization]]
 
 ![[10_Concepts/Brownian Motion with Drift#Brownian Motion with Drift]]
+![[10_Concepts/Brownian Motion With Drift#Hitting Times and Boundary Crossing]]
 ## Gaussian Processes
 ![[10_Concepts/Gaussian process#Gaussian Process]]
 
 ![[10_Concepts/Ornstein-Uhlenbeck Process#Ornstein-Uhlenbeck process]]
-
-![[10_Concepts/Geometric Brownian Motion#Geometric Brownian Motion]]
 
 ## Brownian Bridge
 ![[10_Concepts/Reflection Principle#Reflection Principle]]
