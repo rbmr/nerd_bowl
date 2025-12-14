@@ -105,8 +105,7 @@ Joint, Marginal, and Conditional Distributions
 - Marginal Distribution: The distribution of a subset of the variables contained in the joint distribution (summing or integrating out the others).
     - Discrete: $f_X(x) = \sum_{y} f_{X,Y}(x,y)$.
     - Continuous: $f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy$.
-- Conditional Distribution: The probability distribution of $X$ when $Y$ is known to be a specific value $y$.$$f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}, \quad f_Y(y) > 0$$        
-    - This forms a valid probability distribution (sums or integrates to 1 over $x$).
+- Conditional Distribution: The probability distribution of $X$ when $Y$ is known to be a specific value $y$.$$f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}, \quad f_Y(y) > 0$$
 - Independence: Two random variables $X$ and $Y$ are independent if and only if their joint distribution is the product of their marginals for all $x, y$.
     - $f_{X,Y}(x,y) = f_X(x) \cdot f_Y(y)$
 
