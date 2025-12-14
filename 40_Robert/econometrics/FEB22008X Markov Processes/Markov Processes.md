@@ -210,7 +210,7 @@ Erlang's Loss System
 - The blocking probability $\tilde{P}$ is the probability an arriving customer is "lost" because they find all $k$ servers are busy. Because arrivals follow a Poison process, via the PASTA principle, the fraction of arrivals finding the system is full is exactly equal to the fraction of time the system is full $\tilde{P}=P_{k}$. 
 - We notice then, that the numerator $\frac{(\lambda/\mu)^{n}}{n!}$ is identical to the term found in a standard Poisson distribution. The difference being that a Poisson distribution extends to $n = \infty$, where the $M/M/k/k$ system is "truncated" (cut off) at state $k$. If $k$ is very large, the denominator approaches $e^{\lambda/\mu}$.
 
-Random Walk
+Brownian Motion
 - A Rademacher random variable is $R = 2X - 1$ where $X \sim \text{BERNOULLI}\left( \frac{1}{2} \right)$.
 - Let $R_{1}, R_{2}, \dots$ be a sequence of independent Rademacher variables. Then, a random walk is the process $\{S_{k}, k > 0\}$ with $S_{k} = \sum_{i=1}^k R_{i}$.
 - We consider the rescaled random walk $W_n(t) = \frac{1}{\sqrt{n}} S_{\lfloor nt \rfloor} = \frac{1}{\sqrt{n}} \sum_{i=1}^{\lfloor nt \rfloor} R_i$.
