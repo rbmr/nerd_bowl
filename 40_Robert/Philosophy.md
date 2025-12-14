@@ -1,0 +1,2 @@
+- We show up to every exam.
+- We study as much as we are willing, and accept the consequences.

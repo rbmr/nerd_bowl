@@ -158,9 +158,10 @@ Limiting probabilities of a continuous-time MC.
 Balance Equations for Birth and Death processes
 - For $i=0$, $\lambda_{0}P_{0}=\mu_{1}P_{1}$.
 - For $i>0$, $(\lambda_i + \mu_i) P_i = \mu_{i+1} P_{i+1} + \lambda_{i-1} P_{i-1}$
-- Using a proof by induction we derive that: $\mu_i P_i = \lambda_{i-1} P_{i-1}$, and consequently, $$P_i = \frac{\lambda_0 \lambda_1 \cdots \lambda_{i-1}}{\mu_1 \mu_2 \cdots \mu_i} P_0$$
+- Using a proof by induction we derive that: $\mu_{i + 1} P_{i+1} = \lambda_{i} P_{i}$ (Cut Equations)
+- Consequently, $$P_i = \frac{\lambda_0 \lambda_1 \cdots \lambda_{i-1}}{\mu_1 \mu_2 \cdots \mu_i} P_0$$
 - Given that $\sum_{i=0}^{\infty} P_i = 1$, we get: $$P_{0} = \frac{1}{1+\sum_{i=1}^\infty \frac{\lambda_0 \lambda_1 \cdots \lambda_{i-1}}{\mu_1 \mu_2 \cdots \mu_i}}$$
-- If $P_{0} = 0$, than $P_{i}=0$, consequently making the sum of limiting probabilities also zero. Therefore $P_0$ must be unequal to zero. This gives a necessary and sufficient condition for the existence of the limiting probabilities:$$\sum_{n=1}^{\infty} \frac{\lambda_0 \lambda_1 \cdots \lambda_{n-1}}{\mu_1 \mu_2 \cdots \mu_n} < \infty$$
+- If $P_{0} = 0$, then $P_{i}=0$, consequently making the sum of limiting probabilities also 0. Therefore $P_0$ must be unequal to zero. This gives a necessary and sufficient condition for the existence of the limiting probabilities:$$\sum_{n=1}^{\infty} \frac{\lambda_0 \lambda_1 \cdots \lambda_{n-1}}{\mu_1 \mu_2 \cdots \mu_n} < \infty$$
 - If $\lambda_i = \lambda$ for every $i \ge 0$ and $\mu_i = \mu$ for every $i \ge 1$, and $\lambda/\mu < 1$, then $\sum_{n=1}^{\infty}(\lambda/\mu)^n = \frac{\lambda/\mu}{1 - \lambda/\mu} = \frac{\lambda}{\mu - \lambda}$. This simplifies the aforementioned formulae, such that $P_0 = 1 - \lambda/\mu$ and $P_i = (\lambda/\mu)^i (1 - \lambda/\mu)$.
 
 Queueing systems
@@ -201,3 +202,35 @@ Limiting properties of a queueing system: PASTA
 - In any system where clients arrive and depart one at a time, these two probabilities coincide: $a_n = d_n$. However, $P_{n}$ and $a_n$ are not always equal, except if arrivals follow a Poisson distribution.
 - **P**oisson **A**rrivals **S**ee **T**ime **A**verages implies $P_n = a_n$.
 
+Erlang's Loss System
+- Erlang's loss system is a queueing system where arrivals that find all servers busy do not enter the system and are lost. It corresponds to the **$M/M/k/k$** queueing system. Also called Erlang-B in telecom. Erlang-C is $M/M/k$.
+- For this system, the arrival rate is $\lambda$ and the service rate with $n+1$ busy servers is $(n+1)\mu$. Following the cut equations, $\lambda P_{n} = (n+1)\mu P_{n+1}$.
+- Recursively solving the cut equations yields $P_{n}=\frac{(\lambda/\mu)^{n}}{n!}P_{0}$ for $n=1, 2, \dots, k$.
+- Given that the sum of all probabilities must equal 1 $\sum_{n=0}^{k} P_n = 1$, we get:$$P_{n}=\frac{\frac{(\lambda/\mu)^{n}}{n!}}{\sum_{j=0}^{k}\frac{(\lambda/\mu)^{j}}{j!}}$$
+- The blocking probability $\tilde{P}$ is the probability an arriving customer is "lost" because they find all $k$ servers are busy. Because arrivals follow a Poison process, via the PASTA principle, the fraction of arrivals finding the system is full is exactly equal to the fraction of time the system is full $\tilde{P}=P_{k}$. 
+- We notice then, that the numerator $\frac{(\lambda/\mu)^{n}}{n!}$ is identical to the term found in a standard Poisson distribution. The difference being that a Poisson distribution extends to $n = \infty$, where the $M/M/k/k$ system is "truncated" (cut off) at state $k$. If $k$ is very large, the denominator approaches $e^{\lambda/\mu}$.
+
+Brownian Motion
+- A Rademacher random variable is $R = 2X - 1$ where $X \sim \text{BERNOULLI}\left( \frac{1}{2} \right)$.
+- Let $R_{1}, R_{2}, \dots$ be a sequence of independent Rademacher variables. Then, a random walk is the process $\{S_{k}, k > 0\}$ with $S_{k} = \sum_{i=1}^k R_{i}$.
+- We consider the rescaled random walk $W_n(t) = \frac{1}{\sqrt{n}} S_{\lfloor nt \rfloor} = \frac{1}{\sqrt{n}} \sum_{i=1}^{\lfloor nt \rfloor} R_i$.
+- Brownian Motion or the Wiener process is defined as $\{W(t), t\ge 0\}$ where $W(t) = \lim_{ n \to \infty }W_{n}(t)$. 
+	- Following the Central Limit Theorem, $W_{n}(t)$ tends to a normal random variable with mean zero and variance $t$.
+	- The random variables $W(t_{1})$ and $W(t_{2})-W(t_{1})$ are independent.
+	- The random variable $W(t_{2})-W(t_{1})$ is a normal random variable with mean zero and variance $t_{2} - t_{1}$.
+	- The distribution of $W(t_{1}+s)-W(t_{1})$ does not depend on $t_{1}$.
+- Any continuous-time continuous-state process satisfying these three properties is a Brownian Motion:
+	- $W(0)=0$
+	- Has stationary and independent increments.
+		- Independent: For any set of times $0 \le t_1 < t_2 < \dots < t_n$, the random variables $W(t_2) - W(t_1), W(t_3) - W(t_2), \dots, W(t_n) - W(t_{n-1})$ are mutually independent.
+		- Stationary: The distribution of the increments $W(t + s) - W(t)$ does not depend on $t$, only on the duration $s$.
+	- $W(t_{1}) \sim N(0, t_{1})$
+- While increments are independent, the values $W(t_1), W(t_2), \dots$ are dependent.
+- Any finite collection $(W(t_1), \dots, W(t_m))$ follows a Multivariate Normal Distribution with mean $\mathbf{0}$. 
+	- This is called a **finite-dimensional marginal** because it describes a finite subset of the infinite stochastic process.
+	- The covariance between two points is $\text{Cov}(W(s), W(t)) = \min(s, t)$.
+- An alternative definition of Brownian motion:
+	- $W(0)=0$
+	- Process has multivariate normal marginals.
+	- For $t_1 \leq t_2$, $W(t_1)$ and $W(t_2)$ have mean zero and covariance $t_1$.
+- Reflection principle: The probability that the maximum of the random walk reaches or exceeds $k$ is exactly twice the probability that the random walk ends above $k$ at time $n$:$$\mathbb{P}(\max_{j=1,\dots,n} S_j \geq k) = 2\mathbb{P}(S_n \ge k)$$
