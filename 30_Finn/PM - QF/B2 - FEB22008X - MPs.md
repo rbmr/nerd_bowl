@@ -570,16 +570,17 @@ This process models mean-reverting behavior (e.g., velocity of a particle, inter
 This is often used for "cash position" or cumulative values over time. It is defined as $X(t) = W(t) + \mu t$.
 
 **Way A: Solving for Infinite Horizon (Doob's Result)**
-Use this if the question asks if the process ever crosses a boundary (infinite time).
-- Step 1: Define the Event
-    Formulate the probability as $P(\sup_{t \ge 0} X(t) > y)$ or similar.
-- Step 2: Transform to Linear Boundary
-    Rewrite the event to isolate the standard Brownian Motion $W(t)$.
-    - Example: $W(t) + \mu t > y \iff W(t) > y - \mu t \iff W(t) > y(1 - \frac{\mu}{y}t)$.
-- Step 3: Apply Doob's Formula
-    Use the known result for linear boundary crossing:
-    - $P(\sup_{t \ge 0} \frac{W(t)}{1+at} > y) = \exp(-2ay^2)$.
-    - Substitute your specific values for $a$ and $y$ to get the final probability (e.g., $\exp(2\mu y)$).
+Use this if the question asks if a drifted process ever crosses a barrier (e.g., bankruptcy).
+- Step 1: Isolate the Process $X(t)$
+    - Manipulate the inequality so you have the Brownian Motion and the Drift term (time $t$) on the left, and a positive constant on the right.
+$$W(t) + \mu t > y$$
+    - $\mu$: The drift coefficient (must be negative for the probability to be $<1$).
+    - $y$: The barrier height (must be positive).
+    - _Note: If you have $-W(t)$, treat it exactly as $W(t)$ due to symmetry._
+- Step 2: Apply the Supremum Formula Directly
+    The probability that the process $X(t) = W(t) + \mu t$ ever exceeds $y$ is given by:
+    $$P = e^{2\mu y}$$
+    (Since $\mu$ is negative, the exponent will be negative).
 
 **Way B: Solving for Finite Horizon (Reflection Principle)**
 Use this if the question asks about crossing a boundary within a fixed time $b$.
