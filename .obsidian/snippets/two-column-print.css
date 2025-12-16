@@ -1,0 +1,15 @@
+@media print {
+  /* Apply 2-column layout only when the 'two-columns' class is present */
+  .two-columns .markdown-preview-view {
+    column-count: 2;
+    column-gap: 40px; /* Adjust gap between columns */
+    column-rule: 1px solid #eee; /* Optional: adds a light line between columns */
+  }
+
+  /* Prevent images, code blocks, and callouts from being chopped in half */
+  .two-columns img,
+  .two-columns pre,
+  .two-columns .callout {
+    break-inside: avoid;
+  }
+}
