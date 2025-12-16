@@ -1,4 +1,4 @@
-Events
+### Events
 
 - **Experiment**: Any action whose outcome is subject to uncertainty.
 - **Sample space** $S$: The set of all outcomes of an experiment.
@@ -10,7 +10,7 @@ Events
 - Two events are **mutually exclusive** if $A \cap B = \emptyset$.
 - Events $A_1, A_2, \ldots$ are said to be **mutually exclusive** if they are pairwise exclusive, i.e., if $A_i \cap A_j = \emptyset$ whenever $i \neq j$.
 
-Probability
+### Probability
 
 - **Axioms of probability**: Let $S$ be a sample space of an experiment. A probability set function is a function that assigns a real value $P(A)$ to every event $A \subseteq S$ and satisfies the following three properties:
 	1. $P(A) \ge 0$ for any event $A \subseteq S$.
@@ -20,7 +20,7 @@ Probability
 - Two events $A$ and $B$ are **mutually** **independent** if $P(A \cap B) = P(A) \cdot P(B)$.
 - Events $A_1, \dots, A_n$ are **mutually independent** if for every subset $I \subseteq \{1, 2, \ldots, n\}$: $$P\left(\bigcap_{i \in I} A_i\right) = \prod_{i \in I} P(A_i)$$
 
-Random variables
+### Random variables
 
 - A **random variable** $X$ is a real-valued function on a sample space $X : S \to \mathbb{R}$.
     - $X(S)$ is the set of all possible values of the random variable $X$.
@@ -28,7 +28,7 @@ Random variables
     - $X$ is continuous if its CDF $F_X(x)$ is continuous and its derivative exists.
     - $X$ is mixed if its neither discrete nor continuous.
 
-Probability density function (PDF)
+### Probability density function (PDF)
 
 - A **discrete probability density** **function** directly assigns a probability to each possible value of a discrete random variable. $f_X(x) = P(X = x)$.
     - Its also commonly called a probability mass function (PMF).
@@ -43,7 +43,7 @@ Probability density function (PDF)
     - $P(X=x) = 0$
 - A PDF can depend on some **parameter**. A collection of PDFs for different values of a parameter is called a **family** of PDFs.
 
-Cumulative Distribution Function (CDF)
+### Cumulative Distribution Function (CDF)
 
 - The **cumulative distribution function** (CDF) of a random variable $X$ is the function $F_X(x) = P(X \leq x)$. The CDF provides the cumulative probability up to a certain value and is defined for all random variables.
     - Properties:
@@ -55,7 +55,7 @@ Cumulative Distribution Function (CDF)
         - Continuous case:  $F_X(x) = \int_{-\infty}^x f_X(s)ds$
     - The probability $X$ falls within an interval $[a, b]$ is $P(a \lt X \leq b) = F(b) - F(a)$.
 
-Expectation:
+### Expectation:
 
 - If $X$ is a random variable with PDF $f(x)$, and $u(x)$ is a real-valued function whose domain includes the possible values of $X$, then $u(X)$ is a random variable, and the expected value of $u(X)$ is given by:
     - $E(u(X)) = \sum_i u(x_i) \cdot f(x_i)$ if $X$ is discrete
@@ -65,7 +65,7 @@ Expectation:
     - $E(aX + b) = aE(X) + b$
     - $E(a \cdot g(X) + b \cdot h(X)) = a \cdot E(g(X)) + b \cdot E(h(X))$
 
-Variance
+### Variance
 
 - The variance $\text{Var}(X)$ of a random variable $X$ is given by $\text{Var}(X) = E((X - E(X))^2)= E(X^2) - (E(X))^2$.
 	- Variance is frequently denoted as $\sigma^2$. 
@@ -74,7 +74,7 @@ Variance
     - $Var(X) \geq 0$
     - $Var(aX + b) = a^2 \cdot Var(X)$
 
-Moments
+### Moments
 
 - The $k^\text{th}$ moment $u'_k$ of a random variable $X$ is defined as $E(X^k)$.
     - Also called moment about the origin.
@@ -82,20 +82,20 @@ Moments
     - Also called moment about the mean.
 - $E(X) = \mu = \mu'_1$
 
-Moment generation functions:
+### Moment generation functions:
 
 - If $X$ is a random variable then the expected value $M_X(t) = E(e^{tX})$ is called the moment generating function MGF of $X$. But only if the expectation exists for all values of $t$ within some interval $|t| < h$ for some $h > 0$.
 - The $r$-th derivative of $M_X(t)$ at $t=0$ equals the $r$-th moment $u'_r$
 - We may expand $M_X(t) = 1 + \sum^\infty_{r=1} E(X^r)t^r / r!$
 - Let $X$ and $Y$ be random variables such that $Y = aX + b$, then $M_Y(t) = e^{bt} \cdot M_X(at)$.
 
-Inequalities
+### Inequalities
 
 - Markov inequality: For a random variable $X$ that only takes non-negative values, it holds that for every $c \geq 0$: $P(X \geq c) \leq E(X) / c$
 - Chebyshev inequality: For every random variable $X$ with expected value $\mu$ and variance $\sigma^2 > 0$ it holds that for every $k \gt 0$: $P(|X - \mu| \geq k\sigma) \leq 1 / k^2$
     - consequently, $P(|X - \mu| \lt k\sigma) \geq 1- 1 / k^2$
 
-Joint, Marginal, and Conditional Distributions
+### Joint, Marginal, and Conditional Distributions
 
 - Joint Distribution: Describes the probability behavior of two or more random variables $X$ and $Y$ simultaneously.
     - Discrete (Joint PMF): $f_{X,Y}(x,y) = P(X=x, Y=y)$.
@@ -109,7 +109,7 @@ Joint, Marginal, and Conditional Distributions
 - Independence: Two random variables $X$ and $Y$ are independent if and only if their joint distribution is the product of their marginals for all $x, y$.
     - $f_{X,Y}(x,y) = f_X(x) \cdot f_Y(y)$
 
-Conditional expectation 
+### Conditional expectation 
 
 - The **conditional expectation** of a random variable $X$ given that a random variable $Y$ has taken the value $y$, denoted as $E(X \mid Y=y)$, is the expected value of $X$ computed with respect to the conditional probability distribution $f_{X|Y}(x|y)$.
     - Discrete: $E(X \mid Y=y) = \sum_{x} x \cdot P(X=x \mid Y=y)$

@@ -1,4 +1,4 @@
-Bernoulli Trials Family
+### Bernoulli Trials Family
 
 - The **Bernoulli** distribution models a single trial with a binary outcome: outcome 1 (success) with probability $p$ and outcome 0 (Failure) with probability $(1-p)$.
 - The **Binomial** distribution is the sum of $n$ independent Bernoulli trials. It models the total number of successes for a fixed $n$ trials.
@@ -16,7 +16,7 @@ Bernoulli Trials Family
 | $Var(X)$     | $p(1-p)$                                                                  | $np(1-p)$                                             | $\frac{1-p}{p^{2}}$                  | $\frac{r(1-p)}{p^{2}}$                                    |
 | **Params**   | $0 < p < 1$                                                               | $n \in \mathbb{N}$<br>$0 < p < 1$                     | $0 < p < 1$                          | $r \in \mathbb{N}$<br>$0 < p < 1$                         |
 
-Poisson Process Family
+### Poisson Process Family
 
 - The **Poisson** distribution models the number of events occurring in a fixed interval given a constant average rate $\lambda$. 
 	- It is derived from the Binomial distribution by letting $n \to \infty$ and $p \to 0$ such that $\lambda = np$ remains constant.
@@ -35,7 +35,7 @@ Poisson Process Family
 | $Var(X)$     | $\lambda$                                                   | $\theta^{2}$                                   | $\kappa\theta^{2}$                                                                | $\theta^{2}[\Gamma(1+\frac{2}{\beta})-\Gamma^{2}(1+\frac{1}{\beta})]$           |
 | **Params**   | $\lambda > 0$                                               | $\theta > 0$                                   | $\theta > 0, \kappa > 0$                                                          | $\theta > 0, \beta > 0$                                                         |
 
-Properties
+### Properties
 
 - Memoryless Property: the probability of an event occurring after a duration $s+t$, given that it has not occurred by time $t$, is the same as the initial probability that it would not occur after time $s$.$$\mathbb{P}(X > s + t \mid X > t) = \mathbb{P}(X > s)$$
 	- The **Exponential** and **Geometric** distributions are the only distributions that satisfy the memoryless property for the continuous and discrete cases, respectively.
@@ -44,7 +44,7 @@ Properties
 	- Competing Exponentials (Race Condition): The probability that a specific variable $X_k$ is the first to occur (i.e., is the minimum) is the ratio of its rate to the total rate:$$\mathbb{P}(X_k = \min_j X_j) = \frac{\lambda_k}{\sum_{j=1}^{n} \lambda_j}$$
 	- Independence of Rank and Minimum: The value of the minimum time ($\min X_i$) and the rank ordering of the variables (which one comes 1st, 2nd, etc.) are **independent**. (Direct consequence of the memoryless property.)
 
-The Gaussian Family
+### The Gaussian Family
 
 - The **Normal** (Gaussian) distribution models sums of independent random variables (via the Central Limit Theorem). It approximates the Binomial, Poisson, and Gamma distributions when samples are large. 
 - The **Chi-Square** distribution models the sum of the squares of $\nu$ independent standard normal random variables. 
@@ -61,7 +61,7 @@ The Gaussian Family
 | $Var(X)$     | $\frac{(b-a)^{2}}{12}$               | $2\nu$                                                               | $\frac{\nu}{\nu-2}$ (if $\nu > 2$)                                                                           |
 | **Params**   | $a,b \in \mathbb{R}, a < b$          | $\nu > 0$                                                            | $\nu > 0$                                                                                                    |
 
-The Bounded & Bayesian Family
+### The Bounded & Bayesian Family
 
 - The **Uniform** distribution models a random variable where all intervals of the same length within the support $[a,b]$ are equally probable. It represents maximum entropy (minimum information) over an interval.
 - The **Beta** distribution models random variables restricted to the interval $[0,1]$. It generalizes the Uniform distribution and serves as the conjugate prior for the Bernoulli, Binomial, and Geometric distributions in Bayesian statistics.

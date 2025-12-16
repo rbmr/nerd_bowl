@@ -1,4 +1,6 @@
-### FEB21020X-25: Weekly Overview
+The lectures and book are part of a course on microeconomics. The following is a list of the exact topics and concepts we are expected to know, and those which are we are NOT expected to know.
+
+CRITICAL: Please consider ONLY the topics, concepts, slides, and chapters that are relevant according to the following overview.
 
 **Chapter 1. Introduction.**
 * Topics: Introduction, Microeconomics (Micro), Rational Choice Theory, No Profitable Deviation Property, Reasoning at The Margin, Chapter Summary.
@@ -21,7 +23,7 @@
 * Excluded: incomplete information and behavioral game theory (pages 65-69).
 * Topics for Exercises: Compute dominant strategies, IDS, SDS, dominant EQ, best responses, NE, Compute SPNE for games with perfect information.
 
-**Chapter 4. Consumer Choice. Slides 1-25.**
+**Chapter 4. Consumer Choice.**
 * Topics: Introduction, Walrasian Budget Set, Consumer Preferences and the Utility Function.
 * Concepts: Consumption bundle, inner product, wealth, exogenous and endogenous variables; budget constraint, opportunity set, Walrasian budget set; preference relation, completeness and transitivity; contour sets; indifference curve; ordinal and cardinal properties, monotone transformations; continuous and monotone preferences.
 
@@ -75,3 +77,14 @@
 
 **Chapter 18. Externalities and property rights.**
 * Topics: Externalities and market efficiency, Externalities in markets, Reciprocal nature of externalities, Coase theorem, Positive externalities, Property rights, Tragedy of the Commons, Positional externalities, Taxing externalities.
+
+
+
+
+
+
+
+
+
+
+

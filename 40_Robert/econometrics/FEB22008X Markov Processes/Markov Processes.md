@@ -1,4 +1,4 @@
-Stochastic Processes vs Markov Chains
+### Stochastic Processes vs Markov Chains
 - A compound random variable $S_N = \sum_{i=1}^{N} X_{i}$ is called a compound variable of iid random variables $X_1, X_2, \ldots, X_{N}$ with mean $\mu$. Then,
 	- $\mathbb{E}(S_N | N) = N\mu, \quad \mathbb{E}(S_N) = E(N) \mu$
 	- $\text{Var}(S_{N} | N) = N\sigma^2, \quad \text{Var}(S_N) = \mathbb{E}(N) \sigma^2 + \mu^2 \text{Var}(N)$
@@ -7,8 +7,7 @@ Stochastic Processes vs Markov Chains
 	- Space: Discrete if the individual random variables are discrete, continuous if they are continuous.
 - A stochastic process is is a **discrete time Markov chain** if, for all states $i, j, s_0, ..., s_{n-1} \in S$,  $\mathbb{P}(X_{n+1} = j \mid X_n = i, X_{n-1} = s_{n-1}, \dots, X_0 = s_0) \\ = \mathbb{P}(X_{n+1} = j \mid X_n = i)$.
 - A **random walk** is a Markov chain with state space given by $\mathbb{Z}$. At every state $i$ it may walk one step up to $i+1$ with probability $p$ or down to $i-1$ with probability $1-p$.
-
-Transitions
+### Transitions
 - The conditional probabilities  $\mathbb{P}(X_{n+1} = j \mid X_n = i)$ are called 1-step probabilities from state $i$ to state $j$.
 - The 1-step probabilities are **time homogeneous** if for all $n$,  $\mathbb{P}(X_{n+1} = j \mid X_n = i) = \mathbb{P}(X_1 = j \mid X_0 = i) = P_{ij}$.
 - The **transition probability matrix** stores all transition probabilities $P_{ij}$. It has 2 properties:
@@ -19,8 +18,7 @@ Transitions
 - An efficient way to calculate n-step transition probabilities is are the Chapman-Kolmogorov equations.  $P^{(n+m)}_{i,j} = \sum_{k \in S} P^{(n)}_{i,k} P^{(m)}_{k,j}$.
 	- If we denote the $n$-step transition matrix by $P^{(n)}$ then we can write the equation in the form of a matrix product $P^{(n+m)}=P^{(n)}P^{(m)}$.
 	- For a time homogeneous Markov chain, the n-step transition matrix is just the power of the transition matrix. $P^{(n)} = P^n$
-
-Recurrent vs Transient states.
+### Recurrent vs Transient states.
  - A state $i$ with $P_{ii}=1$ is called **absorbing**.
 - $j$ is called **accessible** from $i$ if $P_{ij}^{k}>0$ for some $k \geq 0$.
 - States $i$ and $j$ are said to **communicate** if they are accessible from each other (denoted $i \leftrightarrow j$). These states form a class. 
@@ -44,8 +42,7 @@ Recurrent vs Transient states.
 	- A state with period $d = 1$ is said to be aperiodic.
 	- Periodicity is also a class property. If $i$ has period $d$, and states $i$ and $j$ communicate, then $j$ also has period $d$.
 - Aperiodic, positive recurrent states are called ergodic. 
-
-Limiting behaviour
+### Limiting behaviour
 - Let $\pi$ denote the limiting distribution of the Markov chain, that is the vector with elements $\pi_{i}=\lim_{ n \to \infty }\mathbb{P}(X_{n}=i)$ with $i \in S$. Three cases:
 	- No limiting distribution exists.
 	- Only one limiting distribution exists. (Limit is independent of initial state $X_{0}$).
@@ -57,8 +54,7 @@ Limiting behaviour
 	- $\lim_{ n \to \infty }P_{ij}^n$ exists and is independent of $i$.
 	- the limiting distribution $\pi$ coincides with the stationary distribution $\varpi$. 
 - If $\pi$ exists it is the unique solution of the steady-state equations. 
-
-Questions to be handled when starting from a transient state:
+### Questions to be handled when starting from a transient state:
 - Mean time spent in transient states $s_{ij}$.
 	- Let $s_{ij}$ be the expected number of time periods the Markov chain is in state $j$, given that it started in state $i$. $$s_{ij} = \begin{cases}1 + \sum_{k}P_{ik}s_{kj} & \text{if } i=j \\ \sum_{k} P_{ik}s_{kj} & \text{if } i \neq j \end{cases}$$
 	- Suppose then, all transient states in a Markov chain are in a set $T = \{1,\dots,t\}$, while the other recurrent states are in $\{t+1,\dots\}$. Only a transient state can transition to another transient state, therefore: $$s_{ij} = \begin{cases}1 + \sum_{k=1}^tP_{ik}s_{kj} & \text{if } i=j \\ \sum_{k=1}^t P_{ik}s_{kj} & \text{if } i \neq j \end{cases}$$
@@ -74,16 +70,14 @@ Questions to be handled when starting from a transient state:
 - Probability of landing in a specific recurrent class $f_{iR_1}$.
 	- Assume there are multiple recurrent classes $R_1, R_2, \dots$. We want to find $f_{iR_1}$, the probability that the Markov chain ever enters the specific recurrent class $R_1$, given it starts in transient state $i$. we obtain $f_{iR_1} = \sum_{j \in R_1}P_{ij} + \sum_{j \in T} P_{ij}f_{jR_1}$.
 	- Let $\mathbf{f}_{R_1}$ be the vector of probabilities for the transient states. Let $\mathbf{p}_{R_1}$ be a vector where the $i$-th entry is $\sum_{j \in R_1}P_{ij}$. Then the system can be written as $\mathbf{f}_{R_1} = \mathbf{p}_{R_1} + \mathbf{P}_T\mathbf{f}_{R_1}$, which can be rewritten as $\mathbf{f}_{R_1} = (I - \mathbf{P}_T)^{-1} \cdot \mathbf{p}_{R_1} = \mathbf{S} \cdot \mathbf{p}_{R_1}$.
-
-Continuous-time Markov chains
+### Continuous-time Markov chains
 - You can think of Continuous-time Markov chains as a Discrete-Time Markov Chain that dictates the path, but instead of taking 1 unit of time per step, the process "pauses" at every node for a random, exponentially distributed amount of time.
 - Let $\{X(t), t \geq 0\}$ be a continuous-time stochastic process,  taking values in $\mathbb{Z}$, and let $\{x(t), t \geq 0\}$ be *any* deterministic function taking values in $\mathbb{Z}$. The process $\{X(t), t \geq 0\}$ is called a **continuous-time Markov chain** if $$\begin{align} & P(X(t+s) = j \mid X(s) = i, X(u) = x(u), 0 \leq u < s)=\\&P(X(t+s) = j \mid X(s) = i)\end{align}$$ for every $s, t \geq 0$.
 - If a continuous-time Markov chain $\{X(t), t \geq 0\}$ satisfies $$P(X(t+s) = j \mid X(s) = i) = P(X(t) = j \mid X(0) = i)$$for every $s, t \geq 0$, then $\{X(t), t \geq 0\}$ is **stationary** (or **time-homogeneous**).
 - Let $T_i$ denote the time the process spends in state $i$ before making a transition into a different state (called sojourn time in state $i$). 
 	- Since $T_{i}$ is memoryless, it must follow some exponential distribution.
 - Let $P_{ij}$ denote the probability of transitioning to state $j$, given that the current state is $i$. The transition probabilities $P_{ij}$ satisfy (1) $P_{ii} = 0$, and (2) $\sum_{j}P_{ij}=1$.
-
-Transition Probability Function
+### Transition Probability Function
 - While $P_{ij}$ (jump probability) defines _where_ the process goes next, the **transition probability function** $P_{ij}(t)$ defines the probability that the process is in state $j$ at time $t$, given it started in state $i$ at time $0$.
 	- $P_{ij}(t) = \mathbb{P}(X(t+s)=j \mid X(s)=i)$ for stationary processes.
 - The **instantaneous transition rate** $q_{ij}$ is the rate at which the process transitions from state $i$ into state $j$. It is related to the sojourn rate $v_i$ and jump probability $P_{ij}$ by $q_{ij} = v_i P_{ij}$. Note that $v_i = \sum_{j \neq i} q_{ij}$.
@@ -95,8 +89,7 @@ Transition Probability Function
 	- Backward: For all states $i, j$ and times $t \ge 0$: $$P_{ij}^{\prime}(t) = \sum_{k \neq i} q_{ik} P_{kj}(t) - v_i P_{ij}(t)$$ Example: Birth and Death Process. For a birth and death process, transitions from state $i$ are only possible to $i+1$ (rate $\lambda_i$) or $i-1$ (rate $\mu_i$). The backward equation becomes:$$P_{ij}^{\prime}(t) = \lambda_i P_{i+1, j}(t) + \mu_i P_{i-1, j}(t) - (\lambda_i + \mu_i) P_{ij}(t)$$
 	- Forward: Under suitable regularity conditions (which hold for birth and death processes and finite state models), for all states $i, j$ and times $t \ge 0$: $$P_{ij}^{\prime}(t) = \sum_{k \neq j} q_{kj} P_{ik}(t) - v_j P_{ij}(t)$$Example: Birth and Death Process. Transitions into state $j$ can only come from $j-1$ (via a birth with rate $\lambda_{j-1}$) or $j+1$ (via a death with rate $\mu_{j+1}$). The forward equation becomes:$$P_{ij}^{\prime}(t) = \lambda_{j-1} P_{i, j-1}(t) + \mu_{j+1} P_{i, j+1}(t) - (\lambda_j + \mu_j) P_{ij}(t)$$
 	- Derivation for both equations start with definition of the derivative, applying Chapman-Kolmogorov Equations, and finally definitions of $q_{ij}$ and $v_{i}$.
-
-Birth and Death processes
+### Birth and Death processes
 - If only transitions from $i$ to $i-1$ (departures/deaths) or $i+1$ (arrivals/births) are allowed, then the process is called a **birth and death process**. For a state $i$ we say arrivals occur with rate $\lambda_{i}$, and departures occur with rate $\mu_{i}$. 
 	- To avoid negative states we may require that $\mu_0 = 0$. 
 	- A **pure birth process** is a birth and death process where $\mu_i = 0$ for all $i \in \mathbb{N}_{0}$.
@@ -105,8 +98,7 @@ Birth and Death processes
 - Per the minimum of two exponential distributions:
 	- Given current state $i$, the probability that the next transition corresponds to an arrival is $P_{i,i+1} = \frac{\lambda_{i}}{\lambda_{i}+\mu_{i}}$. Similarly, $P_{i,i-1} = \frac{\mu_{i}}{\lambda_{i}+\mu_{i}}$.
 	- Given current state $i$, the rate at which the process leaves the state is $\lambda_{i} + \mu_{i}$.
-
-Poisson process Definitions
+### Poisson process Definitions
 - A stochastic process $\{N(t), t \ge 0\}$ is a **counting process** whenever $N(t)$ denotes the total number of events that occur by time $t$. It should satisfy: (1) $N(t) \ge 0$, (2) $N(t)$ is integer valued, and (3) For $s < t$, $N(s) \le N(t)$.
 	- A counting process has **independent increments** whenever the number of events that occur in one time interval is independent of the number of events that occur in another disjoint time interval.
 	- A counting process has **stationary increments** whenever the number of events that occur in any interval depends only on the length of the interval.
@@ -128,8 +120,7 @@ Poisson process Definitions
 - The number of events by time $t$ is at least $n$ if and only if the $n$-th arrival occurs by time $t$: $N(t) \ge n \iff S_n \le t$.
 - The counting process $\{N(t), t \ge 0\}$ is a **Poisson process** with rate $\lambda \gt 0$ where:$$N(t) \equiv \max \{n \mid S_n \le t\}$$
 - All three definitions (the standard distribution-based, the infinitesimal approximation, and this constructive definition) are equivalent.
-
-Poisson Process Properties
+### Poisson Process Properties
 - **Merging**: Suppose that $\{N_1(t), t \ge 0\}$ and $\{N_2(t), t \ge 0\}$ are **independent** Poisson processes with respective rates $\lambda_1$ and $\lambda_2$. Let $N(t) = N_1(t) + N_2(t)$, for $t \ge 0$, then:
     - $\{N(t), t \ge 0\}$ is a Poisson process with rate $\lambda = \lambda_1 + \lambda_2$.
     - The probability that an arrival in the merged process is of type $i$ is $\lambda_i/(\lambda_1 + \lambda_2)$.
@@ -143,8 +134,7 @@ Poisson Process Properties
 	- For any operation where the order of arguments does not matter, you may ignore the sorting entirely, and treat the arrival times as independent uniform variables.
 - When the arrival rate of a Poisson process is a function of time, we speak of a **nonhomogeneous** or **nonstationary** Poisson process.
 	- If we let $m(t) = \int_{0}^{t} \lambda(y) \, dy$, then $N(s + t) - N(s)$ is a Poisson random variable with mean arrival time $m(s + t) - m(s)$.
-
-Limiting probabilities of a continuous-time MC.
+### Limiting probabilities of a continuous-time MC.
 - We define the **limiting probability** of being in state $j$ as $P_{j} = \lim_{ t \to \infty }P_{ij}(t)$. 
 	- These are also called the **stationary probabilities**
 - Suppose this limit exists, and is independent of initial state $i$, then $$\lim_{ t \to \infty }P_{ij}'(t)=\sum_{k\neq j}q_{kj}P_{k}-v_{j}P_{j}$$ 
@@ -154,8 +144,7 @@ Limiting probabilities of a continuous-time MC.
 	- the Markov chain is positive recurrent.
 - The limiting probability can be interpreted as the long-run proportion of time that the process is in state $j$. 
 - If the limiting probabilities exist, then the chain is called **ergodic**.
-
-Balance Equations for Birth and Death processes
+### Balance Equations for Birth and Death processes
 - For $i=0$, $\lambda_{0}P_{0}=\mu_{1}P_{1}$.
 - For $i>0$, $(\lambda_i + \mu_i) P_i = \mu_{i+1} P_{i+1} + \lambda_{i-1} P_{i-1}$
 - Using a proof by induction we derive that: $\mu_{i + 1} P_{i+1} = \lambda_{i} P_{i}$ (Cut Equations)
@@ -163,8 +152,7 @@ Balance Equations for Birth and Death processes
 - Given that $\sum_{i=0}^{\infty} P_i = 1$, we get: $$P_{0} = \frac{1}{1+\sum_{i=1}^\infty \frac{\lambda_0 \lambda_1 \cdots \lambda_{i-1}}{\mu_1 \mu_2 \cdots \mu_i}}$$
 - If $P_{0} = 0$, then $P_{i}=0$, consequently making the sum of limiting probabilities also 0. Therefore $P_0$ must be unequal to zero. This gives a necessary and sufficient condition for the existence of the limiting probabilities:$$\sum_{n=1}^{\infty} \frac{\lambda_0 \lambda_1 \cdots \lambda_{n-1}}{\mu_1 \mu_2 \cdots \mu_n} < \infty$$
 - If $\lambda_i = \lambda$ for every $i \ge 0$ and $\mu_i = \mu$ for every $i \ge 1$, and $\lambda/\mu < 1$, then $\sum_{n=1}^{\infty}(\lambda/\mu)^n = \frac{\lambda/\mu}{1 - \lambda/\mu} = \frac{\lambda}{\mu - \lambda}$. This simplifies the aforementioned formulae, such that $P_0 = 1 - \lambda/\mu$ and $P_i = (\lambda/\mu)^i (1 - \lambda/\mu)$.
-
-Queueing systems
+### Queueing systems
 - **Kendall's Notation**: Queueing systems are indicated via two letters followed by one or two numbers.
 	- The first letter indicates the arrival process:
 		- $D$ - Deterministic: clients arrive at equidistant time points.
@@ -177,8 +165,7 @@ Queueing systems
 	- The first number indicates the number of servers.
 	- The second number indicates the optional capacity of the system. The capacity is the maximum number of waiting clients plus the number of servers. It is omitted if there is infinite capacity.
 - $M/M/1$, is a system with a single server, no capacity, arrivals following a Poisson process, and service times following some exponential random variable. The number of clients in the system is a birth and death process.
-
-Little's Law
+### Little's Law
 - **Definitions**: Consider a general queueing system where $N(t)$ is the number of arrivals up to time $t$.
     - **$\lambda$ (Arrival Rate)**: The overall arrival rate into the system is defined as $\lambda = \lim_{t\rightarrow\infty}\frac{N(t)}{t}$. Note that this is the long-run average rate which may differ from the parameter $\lambda$ in a birth and death process.
     - **$W$ (Average Sojourn Time)**: Let $V_{n}$ denote the time client $n$ spends in the system (sojourn time). The average sojourn time is $W = \lim_{n\rightarrow\infty}\frac{1}{n}\sum_{j=1}^{n}V_{j}$.
@@ -193,24 +180,21 @@ Little's Law
 	- Let $\lambda_Q$ be the arrival rate into the queue ($\lambda_Q = \lambda$).
 	- Let $W_Q$ be the average waiting time in the queue. This is the total sojourn time minus the average service time: $W_{Q} = W - \frac{1}{\mu} = \frac{\lambda}{\mu(\mu-\lambda)}$.
 	- Let $L_Q$ be the average number of clients in the queue. By Little's Law: $L_{Q} = \lambda W_Q = \frac{\lambda^{2}}{\mu(\mu-\lambda)}$.
-
-Limiting properties of a queueing system: PASTA
+### Limiting properties of a queueing system: PASTA
 - Definitions of limiting probabilities.
 	- **$P_n$ (Time Average)**: The long-run probability that the system contains exactly $n$ clients at time $t$: $P_{n}=\lim_{t\rightarrow\infty}\mathbb{P}(X(t)=n)$. This is equivalent to the long-run proportion of time the system spends in state $n$.
 	- **$a_n$ (Arrival Average)**: The long-run proportion of arriving clients that find $n$ clients in the system upon arrival.
 	- **$d_n$ (Departure Average)**: The long-run proportion of departing clients that leave $n$ clients in the system upon departure.
 - In any system where clients arrive and depart one at a time, these two probabilities coincide: $a_n = d_n$. However, $P_{n}$ and $a_n$ are not always equal, except if arrivals follow a Poisson distribution.
 - **P**oisson **A**rrivals **S**ee **T**ime **A**verages implies $P_n = a_n$.
-
-Erlang's Loss System
+### Erlang's Loss System
 - Erlang's loss system is a queueing system where arrivals that find all servers busy do not enter the system and are lost. It corresponds to the **$M/M/k/k$** queueing system. Also called Erlang-B in telecom. Erlang-C is $M/M/k$.
 - For this system, the arrival rate is $\lambda$ and the service rate with $n+1$ busy servers is $(n+1)\mu$. Following the cut equations, $\lambda P_{n} = (n+1)\mu P_{n+1}$.
 - Recursively solving the cut equations yields $P_{n}=\frac{(\lambda/\mu)^{n}}{n!}P_{0}$ for $n=1, 2, \dots, k$.
 - Given that the sum of all probabilities must equal 1 $\sum_{n=0}^{k} P_n = 1$, we get:$$P_{n}=\frac{\frac{(\lambda/\mu)^{n}}{n!}}{\sum_{j=0}^{k}\frac{(\lambda/\mu)^{j}}{j!}}$$
 - The blocking probability $\tilde{P}$ is the probability an arriving customer is "lost" because they find all $k$ servers are busy. Because arrivals follow a Poison process, via the PASTA principle, the fraction of arrivals finding the system is full is exactly equal to the fraction of time the system is full $\tilde{P}=P_{k}$. 
 - We notice then, that the numerator $\frac{(\lambda/\mu)^{n}}{n!}$ is identical to the term found in a standard Poisson distribution. The difference being that a Poisson distribution extends to $n = \infty$, where the $M/M/k/k$ system is "truncated" (cut off) at state $k$. If $k$ is very large, the denominator approaches $e^{\lambda/\mu}$.
-
-Brownian Motion
+### Brownian Motion
 - A Rademacher random variable is $R = 2X - 1$ where $X \sim \text{BERNOULLI}\left( \frac{1}{2} \right)$.
 - Let $R_{1}, R_{2}, \dots$ be a sequence of independent Rademacher variables. Then, a random walk is the process $\{S_{k}, k > 0\}$ with $S_{k} = \sum_{i=1}^k R_{i}$.
 - We consider the rescaled random walk $W_n(t) = \frac{1}{\sqrt{n}} S_{\lfloor nt \rfloor} = \frac{1}{\sqrt{n}} \sum_{i=1}^{\lfloor nt \rfloor} R_i$.
@@ -234,3 +218,69 @@ Brownian Motion
 	- Process has multivariate normal marginals.
 	- For $t_1 \leq t_2$, $W(t_1)$ and $W(t_2)$ have mean zero and covariance $t_1$.
 - Reflection principle: The probability that the maximum of the random walk reaches or exceeds $k$ is exactly twice the probability that the random walk ends above $k$ at time $n$:$$\mathbb{P}(\max_{j=1,\dots,n} S_j \geq k) = 2\mathbb{P}(S_n \ge k)$$
+AI Generated from here onwards:
+### **Gaussian Processes**
+* **Definition**: A stochastic process $\{X(t), t \in T\}$ is a Gaussian process if every finite-dimensional distribution of $\{X(t), t \in T\}$ is multivariate normal.
+* **Characterization**: A Gaussian process is completely described by:
+    * Its mean function: $\mathbb{E}(X(t))$.
+    * Its covariance function: $\text{cov}(X(t_1), X(t_2))$.
+* **Properties**:
+    * The joint distribution of $X(t_1), ..., X(t_m)$ is a multivariate normal distribution with mean vector $(\mathbb{E}(X(t_1)), ..., \mathbb{E}(X(t_m)))^T$ and a covariance matrix where the $(i, j)$ entry is $\text{cov}(X(t_i), X(t_j))$.
+    * Linear operations on a Gaussian process result in another Gaussian process.
+* **Examples**:
+    * **Brownian Motion**: A Gaussian process with mean zero and covariance function $\min(t_1, t_2)$.
+    * **Brownian Bridge**: A Gaussian process with mean zero and covariance function $\min(t_1, t_2) - t_1 t_2$.
+    * **Ornstein-Uhlenbeck Process**: A Gaussian process with mean zero and covariance function $\exp\{-\alpha|t_1 - t_2|/2\}$. It is stationary, unlike Brownian Motion.
+    * **Geometric Brownian Motion**: Defined as $X(t) = e^{\mu t + \sigma W(t)}$. Note: This is **not** a Gaussian process; for fixed $t$, it follows a log-normal distribution.
+### **Brownian Bridge**
+* **Definition**: A Brownian bridge $\{B(t), 0 \le t \le 1\}$ is a continuous Gaussian process on the interval $[0, 1]$ with $B(0) = B(1) = 0$.
+    * Mean function: 0.
+    * Covariance function: $\text{cov}(B(t_1), B(t_2)) = \min(t_1, t_2) - t_1 t_2$.
+* **Relationship to Brownian Motion**:
+    * **From BM to BB**:
+        * $B(t) = W(t) - tW(1)$ is a Brownian bridge. This process forces $W(t)$ to end at 0 at $t=1$.
+        * Alternatively, conditioning a Brownian motion on $W(1) = 0$ creates a Brownian bridge: $\{B(t)\} \overset{d}{=} \{W(t) \mid W(1) = 0\}$.
+    * **From BB to BM**:
+        * $X(t) = B(t) + tZ$, where $Z \sim N(0, 1)$ is independent of $B(t)$, is a Brownian motion on $[0, 1]$.
+        * $X(t) = B(t) - \int_{0}^{t} \frac{B(s)}{s} ds$ is also a Brownian motion on $[0, 1]$.
+* **Supremum of Brownian Bridge**:
+    * One-sided boundary crossing: $\mathbb{P}(\sup_{0 \le u \le 1} B(u) > y) = \exp\{-2y^2\}$ for $y > 0$.
+    * Two-sided (absolute) crossing: $\mathbb{P}(\sup_{0 \le u \le 1} |B(u)| > y) = 2 \sum_{j=1}^{\infty} (-1)^{j+1} \exp\{-2j^2 y^2\}$.
+    * These probabilities are derived by relating the Brownian bridge to a Brownian motion crossing a linear boundary: $\sup_{0 \le u \le 1} B(u) \overset{d}{=} \sup_{t \ge 0} \frac{W(t)}{1+t}$.
+### **Empirical Processes & Asymptotic Statistics**
+* **Empirical Distribution Function (EDF)**:
+    * $F_n(x) = \frac{1}{n} \sum_{i=1}^n I_{\{X_i \le x\}}$. It estimates the true CDF $F(x)$.
+    * Asymptotically, $\sqrt{n}(F_n(x) - F(x))$ converges to a normal distribution $N(0, F(x)(1-F(x)))$ at a fixed $x$.
+* **Empirical Process**:
+    * The stochastic process $\{\sqrt{n}(F_n(x) - F(x)), x \in \mathbb{R}\}$ converges to a transformed Brownian bridge $\{B(F(x)), x \in \mathbb{R}\}$.
+    * **Uniform Empirical Process**: For $U[0, 1]$ variables, the process $B_n(u) = \sqrt{n}(F_n(u) - u)$ converges to a standard Brownian bridge $\{B(u), 0 \le u \le 1\}$.
+* **Applications (Delta Method for Functionals)**:
+    * We can estimate parameters $\theta$ that are functionals of the CDF (i.e., $\theta = g(F)$) using the estimator $\hat{\theta} = g(F_n)$.
+    * If $\theta$ depends on the CDF at finite points (e.g., median), the asymptotic distribution involves a multivariate normal derived from the Brownian bridge covariance.
+    * If $\theta$ depends on the integral of the CDF (e.g., mean), the limit involves an integral of the Brownian bridge: $\sqrt{n}(\hat{\theta} - \theta) \to \int g'(x) B(F(x)) dx$.
+### **Kolmogorov-Smirnov (KS) Test**
+* **Goal**: Test if a sample $Y_1, ..., Y_n$ comes from a specific distribution $F_0(y)$.
+* **Statistic**: $K_n = \sqrt{n} \sup_{y \in \mathbb{R}} |F_n(y) - F_0(y)|$.
+* **Asymptotic Distribution**:
+    * Under the null hypothesis, $K_n$ converges in distribution to $\sup_{u \in [0, 1]} |B(u)|$, the supremum of the absolute value of a Brownian bridge.
+    * This limit is independent of the distribution $F_0$ (distribution-free).
+    * Critical values are based on the distribution of $\sup |B(u)|$ (e.g., for $\alpha=0.05$, critical value $\approx 1.36$).
+* **Confidence Bands**: We can construct bands $F_n(y) \pm k_{\alpha}/\sqrt{n}$. If $F_0(y)$ falls outside these bands, the null hypothesis is rejected.
+### **Boundary Crossing Probabilities**
+* **Problem**: Find the probability that a process crosses a boundary $\psi(t)$ within a time interval.
+* **Brownian Motion (Constant Boundary)**:
+    * Using the reflection principle: $\mathbb{P}(\sup_{0 \le t \le b} W(t) > y) = 2\mathbb{P}(W(b) > y) = 2(1 - \Phi(y/\sqrt{b}))$.
+    * Hitting time density: If $T_y$ is the first time $W(t)$ hits $y$, then $\mathbb{P}(T_y \le b)$ is given by the formula above. The density is $f(s) = \frac{y}{\sqrt{2\pi s^3}} e^{-y^2/2s}$.
+* **Brownian Motion (Two Constant Boundaries)**:
+    * To find $\mathbb{P}(\sup_{0 \le t \le b} |W(t)| > y)$, we use an infinite series correction (alternating sum) of reflection principle terms: $4 \sum_{j=1}^{\infty} (-1)^{j+1} \mathbb{P}(W(b) > (2j-1)y)$.
+* **Brownian Motion (Linear Boundary)**:
+    * Infinite horizon crossing probability for boundary $y(1+at)$: $\mathbb{P}(\sup_{t \ge 0} \frac{W(t)}{1+at} > y) = \exp(-2ay^2)$.
+* **Brownian Motion with Drift**:
+    * Crossing a constant boundary $y$ for $X(t) = W(t) + \mu t$ (where $\mu < 0$) is equivalent to a standard BM crossing a linear boundary. $\mathbb{P}(\sup_{t \ge 0} X(t) > y) = \exp(2\mu y)$.
+* **Comparing Hitting Times**:
+    * Probability that $W(t)$ hits $a > 0$ before it hits $b < 0$: $\mathbb{P}(T_a < T_b) = \frac{-b}{a-b}$. This is derived from the gambler's ruin problem for random walks.
+### **Butler Test for Symmetry**
+* **Goal**: Test if a distribution is symmetric around zero.
+* **Statistic**: Based on ordered absolute values $|Y_{(1)}| \le ... \le |Y_{(n)}|$ and their signs $R_i$.
+    * $T_n = \sup_{0 \le t \le 1} |\frac{1}{\sqrt{n}} \sum_{i=1}^{[nt]} R_i|$.
+* **Asymptotics**: Under the null (symmetry), the partial sum process converges to a Brownian motion. $T_n$ converges to $\sup_{0 \le t \le 1} |W(t)|$, the absolute supremum of a standard Brownian motion on $[0, 1]$. Note this is different from the KS test limit (which uses a Bridge).
