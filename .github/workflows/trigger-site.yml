@@ -1,0 +1,16 @@
+name: Trigger Site Build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Site Rebuild
+        # Uses curl to send a signal to the site repo
+        run: |
+          curl -X POST https://api.github.com/repos/NerdBowl/nerd-bowl-site/dispatches \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+          -d '{"event_type": "update_content"}'
