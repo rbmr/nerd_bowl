@@ -21,7 +21,7 @@ Q2 (10 Nov. - 1 Feb.)
 	- 70% Group report
 - DSAIT4020 **Elements of Statistical Learning**
 	- 70% Digital exam
-	- 30% Group report
+	- 30% Group report https://github.com/pepijn-lens/bankfraud
 - CS4530 **Modelling and Problem Solving**
     - 60% Digital exam
     - 4 Group Assignments, each 10%
