@@ -23,9 +23,7 @@ In order to maximize the return, the agent must develop a plan.
 - Open-loop plan: The plan is just a sequence of actions, starting from the current state. Generally used when state transitions are deterministic.
 - Closed-loop plan: The plan is dependent on the current state at every step. Generally used when state transitions are stochastic, or unknown. 
 The mapping of states to actions is called the policy $\pi(a|s)$, this mapping may itself be probabilistic or deterministic.
-
 ### Bellman Equations
-
 The Bellman equations are the foundational equations for Markov Decision Processes. They recursively define the expected return (also called the "value") of a state (or state-action pair). 
 
 **Bellman Expectation Equations** define the value of some policy $\pi$. 
@@ -38,7 +36,7 @@ The Bellman equations are the foundational equations for Markov Decision Process
 - The Optimal Policy $\pi^*$ is the policy that maximizes the expected return from all states. This is simply the policy $\pi$ whose state-value function $V^\pi(s)$ is equal to the optimal state-value function $V^*(s)$ for all states $s$.
 
 ## Planning
-Planning is about finding the optimal policy when all components of the MDP are known. This 
+Planning is about finding the optimal policy when all components of the MDP are known. 
 
 - Online vs Offline planning:
 	- Offline planning involves computing the optimal policy $\pi^*$ for the entire state space. 
@@ -70,17 +68,17 @@ Reinforcement Learning (RL) is a machine learning paradigm where an agent learns
 	- Active Learning: The goal is find the optimal policy $\pi^*$ by actively updating its actions based on what it has learned.
 - Example Passive Learning (Model-Free) Methods
 	- Monte Carlo (MC) Prediction: After an episode ends, we calculate the observed return $G_t$ for every state $s_t$ visited. We then average the returns for each state over many episodes to estimate $V^\pi(s)$. MC Predictions are unbiased but have high variance.
-	- Temporal-Difference (TD) Learning: Uses bootstrapping. Instead of waiting for the full return, the agent updates its value estimate after a single step $(s, a, r, s')$. It then uses its current estimate of the next state’s value $V(s')$ as a target. The update rule is: $$V(s) \gets v(s) + \alpha[(r + \gamma V(s')) - V(s)]$$The term $\delta = (r + \gamma V(s')) - V(s)$ is called the TD Error.  TD has lower variance than MC but is biased.
+	- Temporal-Difference (TD) Learning: Uses bootstrapping. Instead of waiting for the full return, the agent updates its value estimate after a single step $(s, a, r, s')$. It then uses its current estimate of the next state’s value $V(s')$ as a target. The update rule is: $$V(s) \gets v(s) + \alpha[(r + \gamma V(s')) - V(s)]$$The term $\delta = (r + \gamma V(s')) - V(s)$ is called the TD Error. TD has lower variance than MC but is biased.
 - On-policy vs off-policy:
 	- We distinguish between two policies:
 	    - The behaviour policy: the policy used to determine the actions taken.
-	    - The target policy: the policy the agent is trying to learn (the value of), with the goal of it becoming the optimal policy.
+	    - The target policy: the current best approximation of the optimal policy.
 	- On-policy Learning: The behaviour policy is the target policy.
 	- Off-policy Learning: The behaviour policy is different from the target policy. This allows agents to behave exploratorily while simultaneously learning the value of the optimal, greedy policy that doesn’t explore at all.
 - Example Active Learning (Model-free) Methods
 	- Q-learning (off-policy): A TD-based method that directly learns the optimal action-value function $Q^*$. After a transition $(s, a, r, s')$ the update is:$$Q(s,a) \leftarrow Q(s,a) + \alpha [ (r + \gamma \max_{a'} Q(s', a')) - Q(s,a)]$$
 	- SARSA (on-policy): A TD-based method that waits to see what action $a'$ the agent actually takes in state $s'$ according to its current policy. It learns the action-value function of the policy that its currently following $Q_\pi$. The update using the full transition $(s, a, r, s', a')$ is:$$Q(s,a) \leftarrow Q(s,a) + \alpha [ (r + \gamma Q(s', a')) - Q(s,a)]$$
-- Function approximation: Each of the policy, reward, and value functions may be represented using a table in simple cases, but this becomes impossible for large problems. Instead of a table, we may use a parameterized function to estimate their respective values given some feature vector $X(s)$. The learning algorithm then updates the weights $w$ instead of the table to learn the respective functions.
+- Function approximation: Each of the policy, reward, and value functions may be represented using a table in simple cases, but this becomes impossible for large problems. Instead of a table, we may use a parameterized function to estimate their respective values given some feature vector $X(s)$. The learning algorithm then updates weights $w$ instead of the table to learn the respective functions.
 - Policy Search: Instead of learning a value function, we directly parameterize the policy $\pi(a|s;w)$ and update the policy weights $w$ to maximize the expected return.
 - Actor-Critic methods are RL methods that use a critic (a learned value function) to provide low-variance feedback to the actor (the learned policy).
 
