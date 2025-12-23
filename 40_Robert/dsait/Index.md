@@ -17,8 +17,8 @@ Q1 (1 Sep. - 9 Nov.)
 Q2 (10 Nov. - 1 Feb.)
 
 - DSAIT4015 **Software Engineering and Testing for AI Systems**
-	- 70% Group report
 	- 30% Digital exam
+	- 70% Group report
 - DSAIT4020 **Elements of Statistical Learning**
 	- 70% Digital exam
 	- 30% Group report

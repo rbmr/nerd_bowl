@@ -21,11 +21,11 @@ Block 2 (27 Okt. - 21 Dec.)
 		- Assignment 1 (18 Nov at 23.59)
 	- 80% Written exam
 	- [[Non-linear Optimisation]]
-- FEB22008X Markov Processes
+- ~~FEB22008X Markov Processes~~
 	- 100% Written exam
 	- Open book -> Take what you want except phones and laptops
 	- [[Markov Processes]]
-- FEB21020X Microeconomics (econometrics)
+- ~~FEB21020X Microeconomics (econometrics)~~
 	- 100% Written exam
 	- (or 10% attendance grade)
 	- [[Microeconomics]]
@@ -48,9 +48,7 @@ Block 4+5
 
 - FEB22009S Introductory Seminar Case Studies Econometrics and Operations Research (pre-master)
 
-- Students learn the basic principles of statistical estimation: point estimation, interval estimation, as well as properties of estimators such as bias, variance and consistency.
-- Students learn the basic principles of statistical testing: formulating statistical hypotheses, constructing appropriate tests and the corresponding critical region, calculating p-values and properties of tests such as type I and type II errors, and the power of a test.
-- Students learn how to construct maximum likelihood estimators, method of moment estimators, most powerful tests and likelihood ratio tests.
+
 
 [Intro Notes](Intro%20Notes.md)
 
