@@ -1,4 +1,3 @@
-displ
 Cost benefit 
 - Every choice involves important elements of scarcity. Coping with scarcity is the essence of the human condition. After all, without scarcity, no decision would matter.
 - **Cost-benefit analysis**: When determining to do activity $x$, you should do $x$ if the benefits $B(x)$ outweigh the costs $C(x)$. A cost-benefit analysis can be very complex.
