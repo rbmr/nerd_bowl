@@ -53,11 +53,11 @@ Relations
 - If a relation is reflexive, anti-symmetric, and transitive, it is a partial order.
 
 Functions
-- A function $f$ from set $A$ to set $B$ (denoted $f: A \to B$) is a relation where (essentially) every input has exactly one output.
+- A function $f$ from set $A$ to set $B$ (denoted $f: A \to B$) is a relation where every input has exactly one output.
 	- **Total:** For every $a \in A$, there is some $b \in B$ such that $(a, b) \in f$. 
-		- (Every input is used).
+		- (Every input has at least one output).
 	- **Well-defined:** If $(a, b) \in f$ and $(a, c) \in f$, then $b = c$. 
-		- (One input cannot produce two different outputs).
+		- (Every input has at most one output).
 	- **Domain:** The set $A$.
 		- (All possible inputs).
 	- **Codomain:** The set $B$.
