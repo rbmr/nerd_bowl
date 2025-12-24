@@ -31,8 +31,8 @@ Set laws
     - $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
     - $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
 - **De Morgan's Laws:** These describe how to find the complement of a union or intersection.
-    - $(A \cup B)^c = A^c \cap B^c$ (The complement of the union is the intersection of the complements).
-    - $(A \cap B)^c = A^c \cup B^c$ (The complement of the intersection is the union of the complements).
+    - $(A \cup B)^c = A^c \cap B^c$ 
+    - $(A \cap B)^c = A^c \cup B^c$
 
 Ordered collections
 - A tuple is an ordered collection of elements.
@@ -49,10 +49,29 @@ Relations
 	- Symmetric: $\forall a, b \in A, a R b \to b R a$
 	- Antisymmetric: $\forall a, b \in A, (a R b \land b R a) \to a = b$
 	- Transitive: $\forall a, b, c \in A, (a R b \land b R c) \to a R c$
+- If a relation is reflexive, symmetric, and transitive, it is an equivalence relation.
+- If a relation is reflexive, anti-symmetric, and transitive, it is a partial order.
 
 Functions
-- Write this section
+- A function $f$ from set $A$ to set $B$ (denoted $f: A \to B$) is a relation where (essentially) every input has exactly one output.
+	- **Total:** For every $a \in A$, there is some $b \in B$ such that $(a, b) \in f$. 
+		- (Every input is used).
+	- **Well-defined:** If $(a, b) \in f$ and $(a, c) \in f$, then $b = c$. 
+		- (One input cannot produce two different outputs).
+	- **Domain:** The set $A$.
+		- (All possible inputs).
+	- **Codomain:** The set $B$.
+		- (All allowed outputs)
+	- **Range (or Image):** $\{f(a) \mid a \in A\}$.
+		- (Set of actual outputs produced).
+- **Injective (One-to-One):** Every output corresponds to at most one input. $$\forall x, y \in A, f(x) = f(y) \implies x = y$$
+- **Surjective (Onto):** Every output corresponds to at least one input. $$\forall b \in B, \exists a \in A \text{ such that } f(a) = b$$
+- **Bijective (One-to-One Correspondence):** Both Injective and Surjective.
+	- An inverse function $f^{-1}$ exists if and only if $f$ is bijective.
+
+TODO: maybe write about number sets (natural, integer, rational, real, complex)
 
 Cardinality
 - The **cardinality** of a set $S$ is the number of elements in the set. Denoted $|S|$.
+- TODO: write about countable vs uncountable infinities.
 
