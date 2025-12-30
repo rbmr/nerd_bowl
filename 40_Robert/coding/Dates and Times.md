@@ -2,7 +2,7 @@ Unfortunately for us, the universe does not use integers.
 
 #### Intro
 
-In computing we use **Absolute Time**, a scalar value representing the number of time units (Atomic Seconds) from some specified starting point (usually Unix Epoch, 1970-01-01 00:00:00 UTC). This is great, and easy to do math with. But, humans do not live in Absolute Time. We use **Civil Time** (Calendars and Clocks), which comes with a host of complexities.
+In computing we use **Absolute Time**, a scalar value representing the number of time units (usually Atomic Seconds) from some specified starting point (usually the Unix Epoch, 1970-01-01 00:00:00 UTC). This is great, and easy to do math with. But, humans do not live in Absolute Time. We use **Civil Time** (Calendars and Clocks), which comes with a host of complexities.
 
 #### Origins
 
@@ -26,17 +26,29 @@ With the new definition,
 - a solar orbit (year) takes approximately $365.24219$ days. 
 - hours remained $60$ minutes, and minutes remained $60$ seconds.
 
-Now seconds were constant, but days, months, and years still were not perfect multiples, nor constant. 
+#### The Problem
 
-#### Towards a Calendar
+So we have two definitions of a second:
+- The old definition: the duration of a day divided by $24 \times 60 \times 60 = 86,400$.
+	- Days are a perfect multiple of seconds per definition, but definition is variable. 
+- The modern definition: based on the behaviour of the Cesium-133 atom.
+	- Constant, but days are no longer a perfect multiple of seconds.
+> The solution became to use the modern definition, and use a leap second.
 
-Years, months, days, hours, minutes, and seconds, are talking about duration's (units of time), not points in time. In our objective to understand Civil Time we must be able to describe a **point in time** using these terms.
+On top of this, years, months, and days are not perfect multiples of each other. To describe a date using civil time, we only want to use integers. 
+> The solution became the Gregorian calendar.
+
+Both solutions do one of the following:
+1. they "give up" trying to match the astronomical event,
+	- The average duration of a month, does not match the duration of a lunar cycle.
+2. they alternate between slightly overshooting and undershooting such that the average sum of sub intervals approximates the true duration of the larger interval.
+	- The average duration of a day, and a year match the duration of an earth rotation and earths solar orbit respectively.
 
 #### Months
 
 Since a lunar cycle is approximately $29.53$ days a simple calendar of 12 lunar cycles in a year wouldn't fit, requiring some compromise.
 
-The early roman calendar only has 10 months (Martius through December), compromising 304 days. The remaining ~61 days were simply uncounted, being deemed a "monthless" period of waiting for spring. To close the gap, the months January and February were added to the beginning of the year, explaining the etymologically numbered months are offset by two.
+The early roman calendar only has 10 months (Martius through December), compromising 304 days. The remaining ~61 days were simply uncounted, being deemed a "monthless" period of waiting for spring. To close the gap, the months January and February were added to the beginning of the year, explaining why the etymologically numbered months are offset by two.
 
 In $45 \text{ BC}$, Julius Caesar detached the months from the moon entirely. He distributed the extra days needed to match the solar year ($365$ days) across the 12 months, creating the arbitrary oscillating pattern of 30 and 31 days (with February taking the loss at 28).
 
@@ -66,25 +78,23 @@ This gets us accurate to within 1 day every 3,216 years, which is "close enough"
 
 #### Leap Seconds
 
-Since a day is $86,400.002$ seconds, a simple multiple of $24 \times 60 \times 60=86,400$ would be off. We use Leap Seconds to correct for the $2$ ms. 
+Since a day is $86,400.002$ atomic seconds, a simple multiple of $24 \times 60 \times 60=86,400$ would be off. We use Leap Seconds to correct for the $2$ ms. 
 
-To fix this, the **IERS** (International Earth Rotation and Reference Systems Service) monitors the Earth's rotation. Whenever the difference between Atomic Time and Solar Time approaches **0.9 seconds**, they order a **Leap Second**. Then, at midnight on either June 30 or December 31, the clock ticks:  
+On January 1, 1958, scientists synchronized two clocks, each counting seconds. 
+- TAI (International Atomic Time): The weighted average of over 400 clocks counting atomic seconds worldwide. 
+- UT1 (Universal Time): The time determined by the earth's rotation. Where one full rotation is 24 hours and consequently $86,400$ seconds.
+
+These clocks diverge due to the slowing rotation of the Earth. 
+
+**UTC (Coordinated Universal Time)** serves as the compromise. It ticks at the precise speed of Atomic Time (TAI) but is actively managed to remain within 0.9 seconds of Earth’s rotation (UT1). To maintain this alignment, the **IERS** (International Earth Rotation and Reference Systems Service) monitors the drift. Whenever the difference approaches the 0.9 second threshold, they order a **Leap Second**. Then at, midnight on either June 30 or December 31, the clock ticks: 
 $$
 23:59:59 \rightarrow 23:59:60 \rightarrow 00:00:00
 $$
+UTC is the standard used for civil time. 
 
 > Leap years follow a fixed schedule, but these leap seconds do not. Requiring us to listen for updates from IERS. 
 
 Global meteorologists voted in 2022 to stop adding leap seconds by 2035, deciding that the software bugs are worse than the time drift. Instead the intention is to let the offset grow for a century, and doing a larger correction (like a leap minute) in the distant future.
-
-#### Measures of points in time.
-
-On January 1, 1958, scientists synchronized two clocks. TAI and UT1. 
-
-- TAI (International Atomic Time): The weighted average of over 400 clocks counting atomic seconds worldwide. It ticks continuously and ignores the slowing rotation of the Earth. 
-- UT1 (Universal Time): The time determined by the earth's rotation. Where one full rotation is 24 hours.
-
-UTC (Coordinated Universal Time) then becomes the compromise. This is the standard used for civil time. It ticks at the exact speed of Atomic Time (TAI), but inserts Leap Seconds to ensure it never drifts more than 0.9 seconds away from Earth's rotation (UT1).
 
 #### Timezones
 
@@ -106,3 +116,13 @@ The rules:
 - The Timezone: If the time is in UTC, append a **`Z`** (Zulu time). If not, append the offset (e.g., `+05:30` or `-08:00`).
 
 Example: `2023-12-25T14:30:00Z` represents December 25th, 2023, at 2:30 PM UTC. 
+
+#### Conclusion
+
+Timekeeping is fundamentally messy because we are attempting to force the fractional, and fluctuating motion of celestial bodies into the rigid, integer-based logic of our calendars and clocks. 
+
+To navigate this complexity effectively, you should adopt the following mental model. **Separate the instant from the label** an event happens at one specific, absolute, moment in the universe (Physics). A date and time are merely a "label" for that moment based on human rules and locations (Politics). ISO8601 is the standard for unambiguous labels. 
+
+
+
+
