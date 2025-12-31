@@ -7,6 +7,7 @@ It shall contain the following topics:
 	- Mean Solar Time
 	- Division of days into hours
 	- Division of days into seconds
+	- [Sidereal Day](https://youtu.be/FUHkTs-Ipfg?si=sid_Dq3k3oIfvERS) Not related to the final definition of a second, but an interesting fact and useful in Astrophysics 
 - Tracking the time reliably
 	- Reasoning: "Even Mean Solar Day was not reliable"
 	- Definition of the SI Second
