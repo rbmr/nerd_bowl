@@ -24,7 +24,7 @@ These units of time are derived from astronomy, which are unstable.
 
 The duration of an earth rotation, and a lunar cycle are both increasing as a consequence of the moon dragging on the oceans (tidal friction). The solar orbits are relatively stable, but still fluctuate due to the gravitational pull of other planets (Jupiter/Saturn) and the "wobble" of Earth's axis (precession).
 
-If the second were to be defined as fraction of a day, and the day keeps getting longer, then the "second" itself changes in length. This is unacceptable for modern physics and GPS.
+If the second were to be defined as a fraction of a day, and the day keeps getting longer, then the "second" itself changes in length. This is unacceptable for modern physics and GPS.
 
 To solve this, scientists defined the **SI Second** as the new base unit of time in 1967. It is defined as follows:
 
@@ -48,9 +48,9 @@ This is where the collision between the SI Second (also called Atomic Second) an
 
 **TAI (International Atomic Time)** is the foundation of modern timekeeping. It is a weighted average of over 400 atomic clocks in over 50 national laboratories worldwide. It runs continuously and never stops or steps back. TAI is purely a count of SI seconds.
 
-**UT1 (Universal Time)** is the modern successor to Mean Solar Time. It is defined by the Earth's rotation and is determined by observing distinct quasars (distant celestial objects) using Very Long Baseline Interferometry (VLBI). UT1 is "Earth time"; if the Earth slows down, UT1 slows down. It ensures that noon remains firmly tied to the sun's position overhead.
+**UT1 (Universal Time)** is the modern successor to Mean Solar Time. It is defined by the Earth's rotation and is determined by observing distinct quasars (distant celestial objects) using Very Long Baseline Interferometry (VLBI). If the Earth slows down, UT1 slows down. It ensures that noon remains firmly tied to the sun's position overhead.
 
-**UTC (Coordinated Universal Time)** forms the compromise that governs our civil lives. It ticks at the exact same rate as TAI (using SI seconds). However, it is managed to remain within 0.9 seconds of Earth’s rotation (UT1). To maintain this alignment, the **IERS** (International Earth Rotation and Reference Systems Service) monitors the drift. Whenever the difference approaches the 0.9 second threshold, they order a **Leap Second** allowing UT1 to catch up with UTC. 
+**UTC (Coordinated Universal Time)** forms the compromise that governs our civil lives. It ticks at the exact same rate as TAI (using SI seconds), but it is managed to remain within 0.9 seconds of Earth’s rotation (UT1). To maintain this alignment, the **IERS** (International Earth Rotation and Reference Systems Service) monitors the drift. Whenever the difference approaches the 0.9 second threshold, they order a **Leap Second** allowing UT1 to catch up with UTC. 
 
 >![[Pasted image 20251230173629.png]] 
 >The difference UT1-TAI (blue) and UTC-TAI (red) from 1958 to the present. The time steps in UTC are the leap second adjustments. The positive leap second is an extra second that is inserted into the UTC time scale, which slows its advance relative to UT1. The yellow line shows the evolution of UT1-TAI that would result from a rate of −1.0 s y⁻¹, which was typical for the 13 years following 1972.
@@ -79,9 +79,9 @@ A next issue was to fit the days in a year. A solar year is approximately **365.
 3. Unless, the year is divisible by 400, in which case it IS a leap year.
 	- This gives a year length of $365.2425$ days.
 
-Then the question remained how to divide the days of the year into months. Again the values dont align. A lunar cycle, is approximately $29.53$ days. 12 lunar cycles dont fit perfectly into a year requiring a compromise.
+Then the question remained how to divide the days of the year into months. Again the values dont align. A lunar cycle, is approximately $29.53$ days. Therefore 12 lunar cycles dont fit perfectly into a year requiring a compromise.
 
-The early roman calendar only has 10 months (Martius through December), compromising 304 days. The remaining ~61 days were simply uncounted, being deemed a "monthless" period of waiting for spring. To close the gap, the months January and February were added to the beginning of the year, explaining why the etymologically numbered months are offset by two.
+The early roman calendar only has 10 months (Martius through December), compromising of 304 days. The remaining ~61 days were simply uncounted, being deemed a "monthless" period of waiting for spring. To close the gap, the months January and February were added to the beginning of the year, explaining why the etymologically numbered months are offset by two.
 
 In $45 \text{ BC}$, Julius Caesar detached the months from the moon entirely. He distributed the extra days needed to match the solar year ($365$ days) across the 12 months, creating the arbitrary oscillating pattern of 30 and 31 days (with February taking the loss at 28).
 
